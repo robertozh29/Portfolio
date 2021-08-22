@@ -1,5 +1,5 @@
 <template>
-    <nav>
+    <nav class="navbar">
         <div class="logo">
             <div class="square">
                 <p>R</p>
@@ -18,7 +18,7 @@
                     <a href="#Projects">Projects</a>
                 </li>
                 <li>4.0
-                    <a href="#Contact">Conact</a>
+                    <a href="#Contact">Contact</a>
                 </li>
             </ul>
             <button>Resume</button>
@@ -26,9 +26,14 @@
     </nav>
 </template>
 
+<script>
+export default {
+    name: 'Navbar'
+}
+</script>
 
 <style scoped>
- nav{
+ .navbar{
     width: 100%;
     height: 10vh;
     background-color: #000;
@@ -49,7 +54,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: 1s ease;
+    transition: 0.5s ease;
 }
 
 .square:hover{
@@ -61,7 +66,7 @@
     color: #2fceb3;
     font-size: 24px;
     font-family: 'Montserrat', sans-serif;
-    transition: 1s ease;
+    transition: 0.5s ease;
 }
 
 .square:hover p{
@@ -90,7 +95,11 @@
     color: inherit; 
     text-decoration: inherit; 
     color:#CCC;
+ }
 
+ a:hover{
+     color: #2fceb3;
+     text-decoration: underline;
  }
 
 button{

@@ -1,14 +1,22 @@
 <template>
-  <Navbar/>
+  <Navbar />
+  <div class="content">
+    <Header />
+  </div>
+  <Lightsaber />
 </template>
 
 <script>
 import Navbar from './components/Navbar.vue'
+import Header from './components/Header.vue'
+import Lightsaber from './components/Lightsaber.vue'
 
 export default {
   name: 'App',
   components: {
-    Navbar
+    Navbar,
+    Header,
+    Lightsaber
   }
 }
 </script>
@@ -17,8 +25,26 @@ export default {
 #app {
   font-family: monospace;
   -webkit-font-smoothing: antialiased;
-  color: #2c3e50;
+  color: #cccccc;
   background-color: #171717;
-  min-height: 100vh;
+  min-height: 500vh;
 }
+
+.navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.content{
+  padding: 20vh 10vw;
+}
+
+.lightsaber{
+  position: fixed;
+  bottom: 2.5px;
+  right: 5vw;
+}
+
+
 </style>
