@@ -1,0 +1,105 @@
+<template>
+    <nav>
+        <div class="logo">
+            <div class="square">
+                <p>R</p>
+            </div>
+        </div>
+
+        <div class="links">
+            <ul>
+                <li>1.0
+                    <a href="#About">About</a>
+                </li>
+                <li>2.0
+                    <a href="#Experience">Experience</a>
+                </li>
+                <li>3.0
+                    <a href="#Projects">Projects</a>
+                </li>
+                <li>4.0
+                    <a href="#Contact">Conact</a>
+                </li>
+            </ul>
+            <button>Resume</button>
+        </div>
+    </nav>
+</template>
+
+
+<style scoped>
+ nav{
+    width: 100%;
+    height: 10vh;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+ .logo{
+     margin-left: 3vw;
+}
+
+.square{
+    border: 2px solid #2fceb3;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 1s ease;
+}
+
+.square:hover{
+    border-radius: 50%;
+    transform: rotate(90deg);
+}
+  
+.square p{
+    color: #2fceb3;
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    transition: 1s ease;
+}
+
+.square:hover p{
+    transform: rotate(-90deg);
+}
+
+.links{
+     width: max-content;
+     display: flex;
+     align-items: center;
+     margin-right: 4vw;
+ }
+ 
+ ul{
+    display: flex;
+    list-style: none;
+    margin-right: 25px;
+ }
+ 
+ li{
+     margin: 0 15px;
+     color: #2fceb3;
+ }
+
+ a{
+    color: inherit; 
+    text-decoration: inherit; 
+    color:#CCC;
+
+ }
+
+button{
+    background: transparent;
+    box-shadow: none;
+    padding: 10px 15px;
+    border: 1px solid #2fceb3;
+    border-radius: 5px;
+    color: #2fceb3;
+}
+
+</style>
