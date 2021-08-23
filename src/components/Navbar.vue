@@ -1,9 +1,11 @@
 <template>
     <nav class="navbar">
         <div class="logo">
-            <div class="square">
-                <p>R</p>
-            </div>
+            <a href="/">
+                <div class="square">
+                    <p>R</p>
+                </div>
+            </a>
         </div>
 
         <div class="links">
@@ -36,20 +38,20 @@ export default {
  .navbar{
     width: 100%;
     height: 10vh;
-    background-color: #000;
+    background-color: #171717;
     display: flex;
     justify-content: space-between;
     align-items: center;
  }
 
  .logo{
-     margin-left: 3vw;
+    margin-left: 3vw;
 }
 
 .square{
     border: 2px solid #2fceb3;
-    height: 40px;
-    width: 40px;
+    height: 6vh;
+    width: 6vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,7 +66,7 @@ export default {
   
 .square p{
     color: #2fceb3;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-family: 'Montserrat', sans-serif;
     transition: 0.5s ease;
 }
@@ -97,7 +99,7 @@ export default {
     color:#CCC;
  }
 
- a:hover{
+ li a:hover{
      color: #2fceb3;
      text-decoration: underline;
  }

@@ -1,6 +1,8 @@
 <template>
-    <div class="lightsaber">
-        <div class="light" id="light"></div>
+    <div class="lightsaber" id="lightsaber">
+        <div class="light-container" id="ligh-container">
+            <div class="light" id="light"></div>
+        </div>
         <img src="../assets/saber.png" alt="">
     </div>
 </template>
@@ -15,61 +17,46 @@ export default {
       }  
     },
     methods:{
-        scrollDown(){          
-            const scrolled = window.scrollY;
+        scrollIndicator(){
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;       
 
-            if(this.scrollBefore > scrolled){
-                console.log("ScrollUP");
-                this.scrollBefore = scrolled;
-                //Desired action
-                document.getElementById('light').style.height = (this.hola++ + 'px')
-                document.getElementById('light').style.height = (this.hola++ + 'px')
-                document.getElementById('light').style.height = (this.hola++ + 'px')
-            }else{
-                this.scrollBefore = scrolled;
-                console.log("ScrollDOWN");
-                //Desired action   
-                document.getElementById('light').style.height = (this.hola-- + 'px')
-                document.getElementById('light').style.height = (this.hola-- + 'px')
-                document.getElementById('light').style.height = (this.hola-- + 'px')
-            }
+            document.getElementById("ligh-container").style.height = 70 - ((scrolled * 70 )/100) + "vh";
         }
     },
-    mounted(){
-        
-        document.addEventListener('scroll', ()=>{
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-                console.log("estas al final de la pagina")
-            }else{
-                this.scrollDown()
-            }          
-            
+    mounted(){  
+        document.addEventListener('scroll', ()=>{        
+            this.scrollIndicator()
         })
     }
 }
 </script>
 
 <style scoped>
-.saber{
+.lightsaber{
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
+    justify-content: flex-end;
+    height: 90vh;
 }
 
 img{
-    width: 40px;
+    height: 10vh;
     z-index: 1;
 }
 
-.light{
-    height: calc(80vh - 90px);
-    width: 6px;
-    background-color: #2fceb3;
-    border-radius: 5px 5px 0 0;
-    position:relative;
-    top: 10px;
-    left: 19px;
+.light-container{
+    height: 70vh;
     z-index: -1;
+    display: flex;
+}
+
+.light{
+    width: 5px;
+    background-color: #2fceb3;
+    border-radius: 5px 5px 0 0; 
     /*BOX SHADOW*/
     box-shadow: 0px 0px 10px 5px rgba(50,206,179,0.75);
     -webkit-box-shadow: 0px 0px 10px 5px rgba(50,206,179,0.75);

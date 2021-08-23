@@ -5,6 +5,9 @@
         </div>
         <h1>I'M Robert</h1>
         <h2>Web Developer</h2>
+        <p>I'm a software engineer specializing in building (and occasionally designing) <br>
+          exceptional digital experiences. Currently, I'm focused on building accessible, <br>
+          human-centered products at Upstatement.</p>
     </div>
 </template>
 
@@ -19,9 +22,9 @@
 
 h1{ font-size: 68px;  color:#FFF;}
 
-h2{ font-size: 72px;  }
+h2{ font-size: 72px; margin-bottom: 25px; }
 
-p{ font-size: 42px }
+p{ font-size: 18px; line-height: 30px }
 
 .typewriter{
     margin-bottom:30px ;
