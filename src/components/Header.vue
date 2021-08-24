@@ -8,6 +8,7 @@
         <p>I'm a software engineer specializing in building (and occasionally designing) <br>
           exceptional digital experiences. Currently, I'm focused on building accessible, <br>
           human-centered products at Upstatement.</p>
+        <button>Projects</button>
     </div>
 </template>
 
@@ -29,6 +30,17 @@ p{ font-size: 18px; line-height: 30px }
 .typewriter{
     margin-bottom:30px ;
 }   
+
+button{
+    background: transparent;
+    box-shadow: none;
+    margin-top: 50px;
+    padding: 15px 30px;
+    border: 1px solid #2fceb3;
+    border-radius: 5px;
+    color: #2fceb3;
+    cursor: pointer;
+}
 /* DEMO-SPECIFIC STYLES */ 
 .typewriter h1 {
   color: #2fceb3;
