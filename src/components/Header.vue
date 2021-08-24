@@ -41,6 +41,7 @@ button{
     color: #2fceb3;
     cursor: pointer;
 }
+
 /* DEMO-SPECIFIC STYLES */ 
 .typewriter h1 {
   color: #2fceb3;
