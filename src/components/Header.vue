@@ -6,8 +6,7 @@
         <h1>I'M Robert</h1>
         <h2>Web Developer</h2>
         <p>I'm a software engineer specializing in building (and occasionally designing) <br>
-          exceptional digital experiences. Currently, I'm focused on building accessible, <br>
-          human-centered products at Upstatement.</p>
+          exceptional digital experiences. prueba</p>
         <button>Projects</button>
     </div>
 </template>
