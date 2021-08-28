@@ -7,7 +7,7 @@
         <h2>Web Developer</h2>
         <p>I'm a software engineer specializing in building (and occasionally designing) <br>
           exceptional digital experiences. prueba</p>
-        <button>Projects</button>
+        <a class="boton" href="#projects">Projects</a>
     </div>
 </template>
 
@@ -15,9 +15,11 @@
 .header{
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: flex-start;
     margin: 0 5vw;
+    height: 90vh;
+    padding-bottom: 5vh;
 }
 
 h1{ font-size: 68px;  color:#FFF;}
@@ -30,7 +32,7 @@ p{ font-size: 18px; line-height: 30px }
     margin-bottom:30px ;
 }   
 
-button{
+.boton{
     background: transparent;
     box-shadow: none;
     margin-top: 50px;
@@ -66,5 +68,9 @@ button{
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: orange }
+}
+
+a{
+  text-decoration: none;
 }
 </style>

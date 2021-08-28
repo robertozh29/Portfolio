@@ -2,6 +2,17 @@
   <Navbar />
   <div class="content">
     <Header />
+
+    <div class="projects" id="projects">
+      <Project 
+        :position="'left'" 
+        :link="'https://robertozh29.github.io/snakegame/'"
+      />
+      <Project :position="'right'"/>
+      <Project :position="'left'" />
+      <Project :position="'right'"/>
+    </div>
+    
   </div>
   <Social />
   <Lightsaber />
@@ -13,6 +24,7 @@ import Navbar from './components/Navbar.vue'
 import Header from './components/Header.vue'
 import Lightsaber from './components/Lightsaber.vue'
 import Social from './components/Social.vue'
+import Project from './components/Project.vue'
 
 export default {
   name: 'App',
@@ -20,7 +32,8 @@ export default {
     Navbar,
     Header,
     Lightsaber,
-    Social
+    Social,
+    Project
   }
 }
 </script>
@@ -40,7 +53,17 @@ export default {
 }
 
 .content{
-  padding: 20vh 10vw;
+  padding: 10vh 20vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.projects{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .social{

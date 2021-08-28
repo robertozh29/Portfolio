@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar">
         <div class="logo">
-            <a href="/">
+            <a href="./">
                 <div class="square">
                     <p>R</p>
                 </div>
@@ -23,7 +23,8 @@
                     <a href="#Contact">Contact</a>
                 </li>
             </ul>
-            <button>Resume</button>
+            
+            <a class="boton" href="./CV_Español.pdf" target="_blank">Resume</a>
         </div>
     </nav>
 </template>
@@ -104,7 +105,7 @@ export default {
      text-decoration: underline;
  }
 
-button{
+.boton{
     background: transparent;
     box-shadow: none;
     padding: 10px 15px;
