@@ -2,15 +2,22 @@
   <Navbar />
   <div class="content">
     <Header />
+    <About />
 
     <div class="projects" id="projects">
       <Project 
         :position="'left'" 
         :link="'https://robertozh29.github.io/snakegame/'"
       />
-      <Project :position="'right'"/>
-      <Project :position="'left'" />
-      <Project :position="'right'"/>
+      <Project
+        :position="'right'"
+      />
+      <Project 
+        :position="'left'" 
+      />
+      <Project 
+        :position="'right'"
+      />
     </div>
     
   </div>
@@ -22,15 +29,17 @@
 <script>
 import Navbar from './components/Navbar.vue'
 import Header from './components/Header.vue'
+import About from './components/About.vue'
+import Project from './components/Project.vue'
 import Lightsaber from './components/Lightsaber.vue'
 import Social from './components/Social.vue'
-import Project from './components/Project.vue'
 
 export default {
   name: 'App',
   components: {
     Navbar,
     Header,
+    About,
     Lightsaber,
     Social,
     Project
@@ -60,7 +69,12 @@ export default {
   align-content: flex-start;
 }
 
+.about{
+  margin: 0 7vw;
+}
+
 .projects{
+  padding-top: 11vh;
   display: flex;
   flex-direction: column;
   width: 100%;
