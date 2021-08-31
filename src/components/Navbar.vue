@@ -24,7 +24,7 @@
                 </li>
             </ul>
             
-            <a class="boton" href="../CV_Español.pdf" target="_blank">Resume</a>
+            <a class="boton" href="CV.pdf" target="_blank">Resume</a>
         </div>
     </nav>
 </template>
