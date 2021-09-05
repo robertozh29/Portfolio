@@ -1,78 +1,71 @@
 <template>
-    <div class="project" :class="side">
-        <div class="imagen" @click="redirect"></div>
-        <div class="descripcion"></div>
-    </div>    
+       <div class="project" :class="name">
+            <div class="frame" :class="name">
+                <a class="proyect-link" target="_blank" href="https://robertozh29.github.io/snakegame/V2"></a>
+            </div>
+            <p>{{name}}</p>
+            <div class="tec">
+                <img src="../assets/logos/html_5.svg" alt="HTML5">
+                <img src="../assets/logos/css_3.svg" alt="CSS3">
+                <img src="../assets/logos/js.svg" alt="Javascript">
+            </div>
+        </div>  
 </template>
 
 <script>
 export default {
     name: 'Project',
     props:{
-        position: String,
+        name: String,
         link: String
     },
     methods:{
         redirect(){
             window.open(this.link)
         }
-    },
-    computed:{
-        side: function(){
-            console.log(this.position)
-            return this.position == 'right' ? 'right' : 'left';
-        }
     }
 }
 </script>
 
 <style scoped>
-.project{   
-    width: 750px;
-    height: 300px;
-    margin-bottom: 50px;
-    background-color: #191919;
-    display: flex;
-    border-radius: 8px;
-    overflow: hidden;
+.project{
+    width: 280px;
+    height: 344px;
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    padding: 17px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.left{
-    align-self: flex-start;
-    flex-wrap: wrap;
-}
-
-.right{
-    align-self: flex-end;
-    flex-direction: row-reverse;
-}
-
-.imagen{
-    width: 450px;
-    height: 300px;
-    background-image: url('../assets/snake.png');
-    background-size: cover;
-    
-    cursor: pointer;
-}
-
-.imagen::after{
-    content: "";
-    background-color: rgba(47, 206, 179,0.3);
-    display: inline-block;
+.frame{
     width: 100%;
+    height: 80%;
+    background-color:#0B0B0D;
+    border-radius: 15px;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;   
+}
+
+.frame:hover{
+    transform: scale(1.02);
+}
+
+.frame a::after{
+    content: '';
+    display: block;
     height: 100%;
-    transition: 0.5s;
+    position: relative;
 }
 
-.imagen:hover::after{
-    background-color: rgba(47, 206, 179,0.0);
+.Snake_Game .frame{
+    background-image: url('../assets/snake.png');
 }
 
 
 
 
-.descripcion{
-    width: 334px;
-}
 </style>

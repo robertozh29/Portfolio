@@ -5,9 +5,10 @@
     <About />
 
     <div class="projects" id="projects">
+      <span><p>02.</p><h2>My projects</h2></span>
       <Project 
-        :position="'left'" 
-        :link="'https://robertozh29.github.io/snakegame/'"
+        :name="'Snake_Game'" 
+        :link="'https://robertozh29.github.io/snakegame/V2'"
       />
       <Project
         :position="'right'"
@@ -15,15 +16,11 @@
       <Project 
         :position="'left'" 
       />
-      <Project 
-        :position="'right'"
-      />
     </div>
     
   </div>
   <Social />
   <Lightsaber />
-  <p class="hola">hola</p>
 </template>
 
 <script>
@@ -74,10 +71,28 @@ export default {
 }
 
 .projects{
-  padding-top: 11vh;
+  height: 90vh;
   display: flex;
-  flex-direction: column;
-  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+  margin: 0 7vw;
+}
+
+.projects span{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.projects span h2{
+    font-size: 28px;
+}
+
+.projects span p{
+    color: #2fceb3;
+    font-size: 24px;
 }
 
 .social{
@@ -92,9 +107,5 @@ export default {
   right: 5vw;
 }
 
-.hola{
-  margin-top: 500vh;
-  padding-bottom: 10vh;
-}
 
 </style>
