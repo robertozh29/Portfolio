@@ -23,7 +23,7 @@
                     <a href="#Contact">Contact</a>
                 </li>
             </ul>
-            
+                    
             <a class="boton" href="CV.pdf" target="_blank">Resume</a>
         </div>
     </nav>

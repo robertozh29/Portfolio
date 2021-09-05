@@ -16,8 +16,8 @@
                 <div class="tec">
                     <ul>
                         <li>HTML5</li>
-                        <li>Javascript</li>
-                        <li>css/SASS</li>
+                        <li>CSS/SASS</li>
+                        <li>Javascript</li>  
                     </ul>
                     <ul>
                         <li>Bootstrap</li>
@@ -26,13 +26,8 @@
                     </ul>
                     <ul>
                         <li>PHP</li>
-                        <li>Laravel</li>
                         <li>Node.js</li>
-                    </ul>
-                    <ul>
-                        <li>MySQL</li>
-                        <li>MongoDB</li>
-                        <li>AWS</li>
+                         <li>MySQL</li>
                     </ul>
                 </div>
             </div>
@@ -86,7 +81,24 @@ p{
 .tec{
     padding: 25px 15px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+}
+
+ul{
+    margin-right: 15%;
+    line-height: 2;
+}
+ul li{
+    list-style: none;
+}
+
+ul li::before {
+  content: "\2022";
+  color: #2fceb3;
+  font-weight: bold;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em;
 }
 
 .img-container{
