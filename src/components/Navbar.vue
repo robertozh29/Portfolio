@@ -11,37 +11,21 @@
         <div class="links" id="links">
             <ul>
                 <li>1.0
-                    <a href="#About">About</a>
+                    <a href="#about">About</a>
                 </li>
                 <li>2.0
-                    <a href="#Experience">Experience</a>
+                    <a href="#experience">Experience</a>
                 </li>
                 <li>3.0
-                    <a href="#Projects">Projects</a>
+                    <a href="#projects">Projects</a>
                 </li>
                 <li>4.0
-                    <a href="#Contact">Contact</a>
-                </li>
-                <li>
-                    <div class="resume">
-                        <p class="cv">CV</p>
-                        <span class="dropdown">
-                            <a class="boton" href="CV_English.pdf" target="_blank">English</a>
-                            <a class="boton" href="CV_Español.pdf" target="_blank">Español</a>
-                        </span>
-                    </div>  
-                </li>
+                    <a href="#contact">Contact</a>
+                </li>    
             </ul>
-            
-            
-        </div>
-
-        <div class="ham">
-            
-            <label for="showHam">
-                <img src="../assets/menu.svg" alt="">
-            </label>
-            <input type="checkbox" v-model="checked" id="showHam" >
+            <div class="resume">
+                <a class="boton" href="CV_English.pdf" target="_blank">CV</a>
+            </div> 
         </div>
     </nav>
 </template>
@@ -53,7 +37,19 @@ export default {
         return{
             checked: false
         }
-    }
+    },
+    methods:{
+        show(){
+            if(this.checked){
+                document.getElementById('links').style.display = "flex"
+            }
+        },
+        close(){
+            if(!this.checked){
+                document.getElementById('links').style.display = "none"
+            }
+        }
+    },
 }
 </script>
 
@@ -107,6 +103,7 @@ export default {
  
  ul{
     display: flex;
+    align-items: center;
     list-style: none;
     margin-right: 25px;
  }
@@ -127,9 +124,8 @@ export default {
      text-decoration: underline;
  }
 
-.resume{
+.resume a{
     background: transparent;
-    box-shadow: none;
     padding: 10px 15px;
     border: 1px solid #2fceb3;
     border-radius: 5px;
@@ -137,59 +133,13 @@ export default {
     position: relative;
 }
 
-.resume:hover .dropdown{
-    display:flex;
-}
-
-.dropdown{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    left: 120%;
-    bottom: 10%;
-}
-
-.ham{
-    display: none;
-}
 
 @media only screen and (max-width: 800px){
-    .ham{
-        display: flex;
+    .logo{
+        margin-left: 5vw;
     }
-    .ham img{
-        height: 6vh;
-        margin-right: 10px;
-    }
-    .ham input{
-        visibility: hidden;
-    }
-    .links{
+    ul{
         display: none;
-        width: 80vw;
-        height: 100vh;
-        position: absolute;
-        top:0;
-        right: 0;
-        justify-content: flex-end;
-        padding: 15vh 0;
-        margin: 0;
-        z-index: 10;
-    }
-    .links ul{
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        background-color: #000;
-        width: 100%;
-        height: 100vh;
-        margin: 0;
-    }
-    ul li{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 }
 </style>
