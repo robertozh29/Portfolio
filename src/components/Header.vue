@@ -77,12 +77,12 @@ a{
 @media screen and (max-width: 800px){
     .header{
       margin: 0;
-      margin-top: 8vh;
       width: 100%;
     }
-    h1{ font-size: 64px;  color:#FFF;}
+    h1{ font-size: 54px;  color:#FFF;}
 
-    h2{ font-size: 68px; margin-bottom: 25px; }
+    h2{ font-size: 58px; margin-bottom: 25px; }
 
+    p{ font-size: 16px; line-height: 28px }
 }
 </style>

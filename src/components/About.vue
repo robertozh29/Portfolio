@@ -120,6 +120,7 @@ img{
     .img-container{
         display: none;
     }
+
 }
 
 </style>

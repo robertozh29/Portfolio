@@ -66,12 +66,17 @@ export default {
   align-content: flex-start;
 }
 
+.header{
+  min-height: 100vh;
+}
+
 .about{
+  min-height: 100vh;
   margin: 0 7vw;
 }
 
 .projects{
-  height: 90vh;
+  min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -113,14 +118,15 @@ export default {
     }
     .content{
       padding: 25px;
+      padding-right: 50px;
     }
     .content .about{
       height: max-content;
     }
     .content .projects{
-        height: max-content;
-        justify-content: initial;
-        align-items: initial;
+      height: max-content;
+      justify-content: initial;
+      align-items: initial;
     }  
     .lightsaber{
     bottom: 2.5px;
