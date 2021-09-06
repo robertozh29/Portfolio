@@ -107,5 +107,25 @@ export default {
   right: 5vw;
 }
 
+@media screen and (max-width: 800px){
+    .social{
+      display: none;
+    }
+    .content{
+      padding: 25px;
+    }
+    .content .about{
+      height: max-content;
+    }
+    .content .projects{
+        height: max-content;
+        justify-content: initial;
+        align-items: initial;
+    }  
+    .lightsaber{
+    bottom: 2.5px;
+    right: 0px;
+    }
+}
 
 </style>

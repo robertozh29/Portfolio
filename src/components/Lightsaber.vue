@@ -22,7 +22,13 @@ export default {
             var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             var scrolled = (winScroll / height) * 100;       
 
-            document.getElementById("ligh-container").style.height = 70 - ((scrolled * 70 )/100) + "vh";
+            var width =  document.documentElement.clientWidth;
+            if(width < 800){
+                document.getElementById("ligh-container").style.height = 80 - ((scrolled * 80 )/100) + "vh";
+            }else{
+                document.getElementById("ligh-container").style.height = 70 - ((scrolled * 70 )/100) + "vh";
+            }
+            
         }
     },
     mounted(){  
@@ -40,6 +46,7 @@ export default {
     align-items: center;
     justify-content: flex-end;
     height: 90vh;
+    z-index: 0;
 }
 
 img{
@@ -61,6 +68,22 @@ img{
     box-shadow: 0px 0px 10px 5px rgba(50,206,179,0.75);
     -webkit-box-shadow: 0px 0px 10px 5px rgba(50,206,179,0.75);
     -moz-box-shadow: 0px 0px 10px 5px rgba(50,206,179,0.75);
+}
+
+@media screen and (max-width: 800px){
+    .light{
+        width: 3px;
+         box-shadow: 0px 0px 7px 2px rgba(50,206,179,0.75);
+    }
+    img{
+        height: 7vh;
+        z-index: 1;
+    }
+    .light-container{
+        height: 80vh;
+        z-index: -1;
+        display: flex;
+    }
 }
 
 </style>

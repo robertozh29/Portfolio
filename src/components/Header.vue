@@ -73,4 +73,16 @@ p{ font-size: 18px; line-height: 30px }
 a{
   text-decoration: none;
 }
+
+@media screen and (max-width: 800px){
+    .header{
+      margin: 0;
+      margin-top: 8vh;
+      width: 100%;
+    }
+    h1{ font-size: 64px;  color:#FFF;}
+
+    h2{ font-size: 68px; margin-bottom: 25px; }
+
+}
 </style>

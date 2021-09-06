@@ -66,6 +66,17 @@ export default {
 }
 
 
+@media screen and (max-width: 800px){
+    .projects{
+        height: max-content;
+        justify-content: initial;
+        align-items: initial;
+    }   
+    .project{
+        margin-bottom: 30px;
+    }
+}
+
 
 
 </style>

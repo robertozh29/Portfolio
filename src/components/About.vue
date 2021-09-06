@@ -110,5 +110,16 @@ ul li::before {
 img{
     width: 80%;
 }
+@media screen and (max-width: 800px){
+    .about{
+        margin: 0;
+    }
+    .contenido{
+        width:100%;
+    }
+    .img-container{
+        display: none;
+    }
+}
 
 </style>

@@ -23,8 +23,18 @@
                     <a href="#Contact">Contact</a>
                 </li>
             </ul>
-                    
-            <a class="boton" href="CV.pdf" target="_blank">CV</a>
+            <div class="resume">
+                <p class="cv">CV</p>
+                <span class="dropdown">
+                    <a class="boton" href="CV_English.pdf" target="_blank">English</a>
+                    <a class="boton" href="CV_Español.pdf" target="_blank">Español</a>
+                </span>
+            </div>  
+            
+        </div>
+
+        <div class="ham">
+            <p>hola</p>
         </div>
     </nav>
 </template>
@@ -80,7 +90,7 @@ export default {
      width: max-content;
      display: flex;
      align-items: center;
-     margin-right: 4vw;
+     margin-right: 6vw;
  }
  
  ul{
@@ -100,18 +110,44 @@ export default {
     color:#CCC;
  }
 
- li a:hover{
+ li a:hover, .dropdown a:hover {
      color: #2fceb3;
      text-decoration: underline;
  }
 
-.boton{
+.resume{
     background: transparent;
     box-shadow: none;
     padding: 10px 15px;
     border: 1px solid #2fceb3;
     border-radius: 5px;
     color: #2fceb3;
+    position: relative;
 }
 
+.resume:hover .dropdown{
+    display:flex;
+}
+
+.dropdown{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 120%;
+    bottom: 10%;
+}
+
+.ham{
+    display: none;
+}
+
+@media only screen and (max-width: 800px){
+    .ham{
+        display: flex;
+    }
+
+    .links{
+        display: none;
+    }
+}
 </style>
