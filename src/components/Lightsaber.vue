@@ -24,7 +24,7 @@ export default {
 
             var width =  document.documentElement.clientWidth;
             if(width < 800){
-                document.getElementById("ligh-container").style.height = 80 - ((scrolled * 80 )/100) + "vh";
+                document.getElementById("ligh-container").style.height = 75 - ((scrolled * 75 )/100) + "vh";
             }else{
                 document.getElementById("ligh-container").style.height = 70 - ((scrolled * 70 )/100) + "vh";
             }
@@ -80,7 +80,7 @@ img{
         z-index: 1;
     }
     .light-container{
-        height: 80vh;
+        height: 75vh;
         z-index: -1;
         display: flex;
     }

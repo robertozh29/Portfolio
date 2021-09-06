@@ -56,6 +56,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 2;
 }
 
 .content{
@@ -87,6 +88,7 @@ export default {
 .projects span{
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     margin-bottom: 40px;
     width: 100%;
 }
@@ -130,7 +132,7 @@ export default {
     }  
     .lightsaber{
     bottom: 2.5px;
-    right: 0px;
+    right: -5px;
     }
 }
 

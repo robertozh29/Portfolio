@@ -8,7 +8,7 @@
             </a>
         </div>
 
-        <div class="links">
+        <div class="links" id="links">
             <ul>
                 <li>1.0
                     <a href="#About">About</a>
@@ -22,26 +22,38 @@
                 <li>4.0
                     <a href="#Contact">Contact</a>
                 </li>
+                <li>
+                    <div class="resume">
+                        <p class="cv">CV</p>
+                        <span class="dropdown">
+                            <a class="boton" href="CV_English.pdf" target="_blank">English</a>
+                            <a class="boton" href="CV_Español.pdf" target="_blank">Español</a>
+                        </span>
+                    </div>  
+                </li>
             </ul>
-            <div class="resume">
-                <p class="cv">CV</p>
-                <span class="dropdown">
-                    <a class="boton" href="CV_English.pdf" target="_blank">English</a>
-                    <a class="boton" href="CV_Español.pdf" target="_blank">Español</a>
-                </span>
-            </div>  
+            
             
         </div>
 
         <div class="ham">
-            <p>hola</p>
+            
+            <label for="showHam">
+                <img src="../assets/menu.svg" alt="">
+            </label>
+            <input type="checkbox" v-model="checked" id="showHam" >
         </div>
     </nav>
 </template>
 
 <script>
 export default {
-    name: 'Navbar'
+    name: 'Navbar',
+    data(){
+        return{
+            checked: false
+        }
+    }
 }
 </script>
 
@@ -145,9 +157,39 @@ export default {
     .ham{
         display: flex;
     }
-
+    .ham img{
+        height: 6vh;
+        margin-right: 10px;
+    }
+    .ham input{
+        visibility: hidden;
+    }
     .links{
         display: none;
+        width: 80vw;
+        height: 100vh;
+        position: absolute;
+        top:0;
+        right: 0;
+        justify-content: flex-end;
+        padding: 15vh 0;
+        margin: 0;
+        z-index: 10;
+    }
+    .links ul{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: #000;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+    }
+    ul li{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 </style>
