@@ -1,13 +1,11 @@
 <template>
        <div class="project" :class="name">
             <div class="frame" :class="name">
-                <a class="proyect-link" target="_blank" href="https://robertozh29.github.io/snakegame/V2"></a>
+                <a class="proyect-link" target="_blank" :href="link"></a>
             </div>
-            <p>{{name}}</p>
+            <p class="nombre">{{name}}</p>
             <div class="tec">
-                <img src="../assets/logos/html_5.svg" alt="HTML5">
-                <img src="../assets/logos/css_3.svg" alt="CSS3">
-                <img src="../assets/logos/js.svg" alt="Javascript">
+                <img v-for="img,index in tech" :key="index"  v-bind:src="getImage(img)" :alt="img" >         
             </div>
         </div>  
 </template>
@@ -17,11 +15,34 @@ export default {
     name: 'Project',
     props:{
         name: String,
-        link: String
+        link: String,
+        tech: Array
     },
     methods:{
         redirect(){
             window.open(this.link)
+        },
+        getImage(img){
+            switch(img){
+                case 'html':
+                    console.log('html')
+                    return require(`../assets/logos/html_5.svg`);
+                
+                case 'css':
+                    console.log('css')
+                   return require('../assets/logos/css_3.svg');
+
+                case 'js':
+                    console.log('html')
+                   return require("../assets/logos/js.svg");
+
+                case 'vue':
+                    console.log('html')
+                   return require('../assets/logos/vue.svg');
+                case 'php':
+                    console.log('html')
+                   return require('../assets/logos/php.svg');
+            }
         }
     }
 }
@@ -63,6 +84,34 @@ export default {
 
 .Snake_Game .frame{
     background-image: url('../assets/snake.png');
+}
+
+.Perfilador .frame{
+    background-image: url('../assets/projects/perfilador.png');
+}
+
+
+.Movie_Theater .frame{
+    background-image: url('../assets/projects/movie.png');
+}
+
+.Snake_Game .frame{
+    background-image: url('../assets/snake.png');
+}
+
+.nombre{
+    padding: 10px 0;
+}
+
+.tec{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tec img{
+    width: 25px;
+    height: 25px;
 }
 
 

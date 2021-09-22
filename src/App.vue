@@ -6,18 +6,24 @@
 
     <div class="projects" id="projects">
       <span><p>02.</p><h2>My projects</h2></span>
+      <Project
+        :name="'Perfilador'" 
+        :link="'http://perfilador.telescopiomx.com'"
+        :tech="['vue', 'php']"
+      />
       <Project 
         :name="'Snake_Game'" 
         :link="'https://robertozh29.github.io/snakegame/V2'"
-      />
-      <Project
-        :position="'right'"
+        :tech="['html','css', 'js']"
       />
       <Project 
-        :position="'left'" 
+        :name="'Movie_Theater'" 
+        :link="'https://robertozh29.github.io/salaCine/'"
+        :tech="['html','css', 'js']"
       />
-    </div>
-    
+      
+    </div>  
+
   </div>
   <Social />
   <Lightsaber />
@@ -46,7 +52,8 @@ export default {
 
 <style>
 #app {
-  font-family: monospace;
+  /*font-family: monospace;*/
+  font-family: 'Raleway';
   -webkit-font-smoothing: antialiased;
   color: #cccccc;
   background-color: #171717;

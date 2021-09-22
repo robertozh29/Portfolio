@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar">
         <div class="logo">
-            <a href="./">
+            <a href="./" @click.prevent="scrollTo('#header')">
                 <div class="square">
                     <p>R</p>
                 </div>
@@ -11,16 +11,13 @@
         <div class="links" id="links">
             <ul>
                 <li>1.0
-                    <a href="#about">About</a>
+                    <a href="#about" @click.prevent="scrollTo('#about')">About</a>
                 </li>
                 <li>2.0
-                    <a href="#experience">Experience</a>
+                    <a href="#projects" @click.prevent="scrollTo('#projects')">Projects</a>
                 </li>
                 <li>3.0
-                    <a href="#projects">Projects</a>
-                </li>
-                <li>4.0
-                    <a href="#contact">Contact</a>
+                    <a href="#contact" @click.prevent="scrollTo('#contact')">Contact</a>
                 </li>    
             </ul>
             <div class="resume">
@@ -48,6 +45,9 @@ export default {
             if(!this.checked){
                 document.getElementById('links').style.display = "none"
             }
+        },
+        scrollTo(selector){
+            document.querySelector(selector).scrollIntoView({behavior: 'smooth'})
         }
     },
 }
@@ -61,6 +61,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: monospace;
  }
 
  .logo{

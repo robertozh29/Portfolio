@@ -1,15 +1,15 @@
 <template>
-    <div class="about">
-        <div class="contenido">
-            <span><p>01.</p><h2>About me</h2></span>
-            <p>Hello! My names is Robert, I'm a web developer  with a big passsion
-                for technology and it's applicability. Since I was a kid I've been dreaming 
-                about the future of technology that we as humans will be developing in the near future,
-                now as an adult my dream it's to contribute and learn as much as I can 
-                from the modern and future technologys.
-            </p>
+    <div class="about" id="about">
 
-            <div class="experiencia">
+            
+            <div class="about-me">
+                <span><p>01.</p><h2>About me</h2></span>
+                <p>Hello! My names is Robert, I'm a web developer  with a big passsion
+                    for technology and it's applicability. Since I was a kid I've been dreaming 
+                    about the future of technology that we as humans will be developing in the near future,
+                    now as an adult my dream it's to contribute and learn as much as I can 
+                    from the modern and future technologys.
+                </p>
                 <p>Currently I've been working developing Front-end and Back-end Web applications for a Marketign Agency and some freelancing projects,
                     working with several frameworks and differents technologies such as:
                 </p>
@@ -17,41 +17,52 @@
                     <ul>
                         <li>HTML5</li>
                         <li>CSS/SASS</li>
-                        <li>Javascript</li>  
+                       
                     </ul>
                     <ul>
                         <li>Bootstrap</li>
+                         <li>Javascript</li>  
+                    </ul>
+                    <ul>
                         <li>Vue.js</li>
                         <li>React.js</li>
                     </ul>
                     <ul>
                         <li>PHP</li>
-                        <li>Node.js</li>
                          <li>MySQL</li>
                     </ul>
                 </div>
             </div>
-        </div>
-        <div class="img-container">
-            <img src="../assets/falcon2.png" alt="">
-        </div>
+
+            <img src="../assets/yo.jpg" alt="">
+
     </div>
+
 </template>
 
 <style scoped>
 .about{
-    display: flex;
     height: 90vh;
-    align-items: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 10vh 0;
 }
 
-.contenido{
-    width: 60%;
+.about img{
+    width: 200px;
+    height: 200px;
+    margin: 0 50px;
 }
 
-.img-container{
-    width: 40%;
+.about-me{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;    
+}
+
+.about-me p:first-of-type{
+    margin-bottom: 15px;
 }
 
 span{
@@ -70,8 +81,9 @@ h2{
 }
 
 p{
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.4;
+    letter-spacing: 0.05em;
 }
 
 .experiencia{
@@ -101,12 +113,7 @@ ul li::before {
   margin-left: -1em;
 }
 
-.img-container{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-top: 3%;
-}
+
 img{
     width: 80%;
 }

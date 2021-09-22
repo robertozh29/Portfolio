@@ -1,12 +1,11 @@
 <template>
-    <div class="header">
+    <div class="header" id="header">
         <div class="typewriter">
             <h1>Hello there...</h1>
         </div>
-        <h1>I'M Robert</h1>
+        <h1>Roberto Zepeda</h1>
         <h2>Web Developer</h2>
-        <p>I'm a software engineer specializing in building (and occasionally designing) <br>
-          exceptional digital experiences. prueba</p>
+        <p>I'm a software engineer specializing in building Front-End Web applications.</p>
         <a class="boton" href="#projects">Projects</a>
     </div>
 </template>
@@ -26,7 +25,11 @@ h1{ font-size: 68px;  color:#FFF;}
 
 h2{ font-size: 72px; margin-bottom: 25px; }
 
-p{ font-size: 18px; line-height: 30px }
+p{ 
+  font-size: 18px; 
+  line-height: 30px;
+  letter-spacing: 0.15em;
+}
 
 .typewriter{
     margin-bottom:30px ;
