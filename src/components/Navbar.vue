@@ -11,17 +11,20 @@
         <div class="links" id="links">
             <ul>
                 <li>1.0
-                    <a href="#about" @click.prevent="scrollTo('#about')">About</a>
+                    <a href="#header" @click.prevent="scrollTo('#header')">Home</a>
                 </li>
                 <li>2.0
-                    <a href="#projects" @click.prevent="scrollTo('#projects')">Projects</a>
+                    <a href="#about" @click.prevent="scrollTo('#about')">About</a>
                 </li>
                 <li>3.0
+                    <a href="#projects" @click.prevent="scrollTo('#projects')">Projects</a>
+                </li>
+                <li>4.0
                     <a href="#contact" @click.prevent="scrollTo('#contact')">Contact</a>
                 </li>    
             </ul>
             <div class="resume">
-                <a class="boton" href="CV_English.pdf" target="_blank">CV</a>
+                <a class="boton" href="CV.pdf" target="_blank">CV</a>
             </div> 
         </div>
     </nav>

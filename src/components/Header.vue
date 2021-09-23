@@ -6,9 +6,20 @@
         <h1>Roberto Zepeda</h1>
         <h2>Web Developer</h2>
         <p>I'm a software engineer specializing in building Front-End Web applications.</p>
-        <a class="boton" href="#projects">Projects</a>
+        <a class="boton" href="#projects" @click.prevent="scrollTo('#projects')">Projects</a>
     </div>
 </template>
+
+<script>
+export default {
+  name: 'Header',
+  methods:{
+    scrollTo(selector){
+            document.querySelector(selector).scrollIntoView({behavior: 'smooth'})
+        }
+  }
+}
+</script>
 
 <style scoped>
 .header{

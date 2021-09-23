@@ -82,7 +82,7 @@ h2{
 
 p{
     font-size: 17px;
-    line-height: 1.4;
+    line-height: 1.6;
     letter-spacing: 0.05em;
 }
 

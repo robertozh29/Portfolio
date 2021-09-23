@@ -3,7 +3,6 @@
   <div class="content">
     <Header />
     <About />
-
     <div class="projects" id="projects">
       <span><p>02.</p><h2>My projects</h2></span>
       <Project
@@ -21,8 +20,9 @@
         :link="'https://robertozh29.github.io/salaCine/'"
         :tech="['html','css', 'js']"
       />
-      
     </div>  
+
+    <Contact />
 
   </div>
   <Social />
@@ -36,6 +36,7 @@ import About from './components/About.vue'
 import Project from './components/Project.vue'
 import Lightsaber from './components/Lightsaber.vue'
 import Social from './components/Social.vue'
+import Contact from './components/Contact.vue'
 
 export default {
   name: 'App',
@@ -45,7 +46,8 @@ export default {
     About,
     Lightsaber,
     Social,
-    Project
+    Project,
+    Contact
   }
 }
 </script>
