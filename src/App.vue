@@ -1,60 +1,54 @@
 <template>
-  <Navbar />
-  <div class="content">
-    <Header />
-    <About />
-    <div class="projects" id="projects">
-      <span><p>02.</p><h2>My projects</h2></span>
-      <Project
-        :name="'Perfilador'" 
-        :link="'http://perfilador.telescopiomx.com'"
-        :tech="['vue', 'php']"
-      />
-      <Project 
-        :name="'Snake_Game'" 
-        :link="'https://robertozh29.github.io/snakegame/V2'"
-        :tech="['html','css', 'js']"
-      />
-      <Project 
-        :name="'Movie_Theater'" 
-        :link="'https://robertozh29.github.io/salaCine/'"
-        :tech="['html','css', 'js']"
-      />
-    </div>  
+  <div class="app">
 
-    <Contact />
+    <!--Layout-->
+    <Navbar />
+    <Social />
+    <Lightsaber />
+    <!--End Layout-->
+    <div class="content">
+      <Header />
+      <About />
+      <Projects />
+      <Contact />
+    </div>
 
   </div>
-  <Social />
-  <Lightsaber />
 </template>
 
 <script>
+// Layout
 import Navbar from './components/Navbar.vue'
+import Social from './components/Social.vue'
+import Lightsaber from './components/Lightsaber.vue'
+
+// Content
 import Header from './components/Header.vue'
 import About from './components/About.vue'
-import Project from './components/Project.vue'
-import Lightsaber from './components/Lightsaber.vue'
-import Social from './components/Social.vue'
+import Projects from './components/Projects.vue'
 import Contact from './components/Contact.vue'
+// 
+
+
 
 export default {
   name: 'App',
   components: {
     Navbar,
-    Header,
-    About,
     Lightsaber,
     Social,
-    Project,
+    Header,
+    About,
+    Projects,
     Contact
   }
 }
 </script>
 
 <style>
-#app {
-  /*font-family: monospace;*/
+.app{
+  width: 100vw;
+  min-height: 100vh;
   font-family: 'Raleway';
   -webkit-font-smoothing: antialiased;
   color: #cccccc;
@@ -69,46 +63,26 @@ export default {
 }
 
 .content{
-  padding: 10vh 20vh;
+  padding: 0 30vh;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  align-content: flex-start;
 }
 
 .header{
-  min-height: 100vh;
+  min-height: 110vh;
 }
 
 .about{
   min-height: 100vh;
-  margin: 0 7vw;
 }
 
 .projects{
   min-height: 100vh;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: center;
-  margin: 0 7vw;
 }
 
-.projects span{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-bottom: 40px;
-    width: 100%;
-}
-
-.projects span h2{
-    font-size: 28px;
-}
-
-.projects span p{
-    color: #2fceb3;
-    font-size: 24px;
+.contact{
+  min-height: 100vh;
 }
 
 .social{
@@ -124,21 +98,16 @@ export default {
 }
 
 @media screen and (max-width: 800px){
+    .app{
+      width: 100%;
+    }
     .social{
       display: none;
     }
     .content{
-      padding: 25px;
-      padding-right: 50px;
+      padding: 0 5%;
     }
-    .content .about{
-      height: max-content;
-    }
-    .content .projects{
-      height: max-content;
-      justify-content: initial;
-      align-items: initial;
-    }  
+
     .lightsaber{
     bottom: 2.5px;
     right: -5px;

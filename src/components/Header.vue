@@ -27,9 +27,8 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin: 0 5vw;
-    height: 90vh;
-    padding-bottom: 5vh;
+    height:100%;
+    width: 100%;
 }
 
 h1{ font-size: 68px;  color:#FFF;}
