@@ -42,6 +42,9 @@ export default {
                 case 'php':
                     console.log('html')
                    return require('../assets/logos/php.svg');
+                case 'react':
+                    console.log('html')
+                   return require('../assets/logos/react.svg');
             }
         }
     }
@@ -98,6 +101,12 @@ export default {
 .Snake_Game .frame{
     background-image: url('../assets/snake.png');
 }
+
+
+.CRUD.frame{
+    background-image: url('../assets/projects/crud.png');
+}
+
 
 .nombre{
     padding: 10px 0;

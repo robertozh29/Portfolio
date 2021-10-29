@@ -2,10 +2,10 @@
     <div class="projects" id="projects">
         <span class="subtitle"><p>02.</p><h2>My Projects</h2></span>
         <div class="projects-container">
-            <Project 
-                :name="'Movie_Theater'" 
-                :link="'https://robertozh29.github.io/salaCine/'"
-                :tech="['html','css', 'js']"
+            <Project
+                :name="'CRUD'" 
+                :link="'https://crud-da10d.web.app'"
+                :tech="['react']"
             />
             <Project
                 :name="'Perfilador'" 
@@ -15,6 +15,13 @@
             <Project 
                 :name="'Snake_Game'" 
                 :link="'https://robertozh29.github.io/snakegame/V2'"
+                :tech="['html','css', 'js']"
+            />
+        </div>
+        <div class="projects-container">
+            <Project 
+                :name="'Movie_Theater'" 
+                :link="'https://robertozh29.github.io/salaCine/'"
                 :tech="['html','css', 'js']"
             />
         </div>
@@ -56,6 +63,7 @@ export default {
     width: 100%;
     display: flex;
     justify-content: space-around;
+    margin-bottom: 35px;
 }
 
 @media only screen and (max-width: 800px){
@@ -65,6 +73,7 @@ export default {
     .projects-container{
         flex-direction: column;
         align-items: center;
+        margin-bottom: 10px;
     }
 }
 </style>
