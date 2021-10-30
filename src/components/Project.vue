@@ -25,26 +25,19 @@ export default {
         getImage(img){
             switch(img){
                 case 'html':
-                    console.log('html')
                     return require(`../assets/logos/html_5.svg`);
-                
                 case 'css':
-                    console.log('css')
                    return require('../assets/logos/css_3.svg');
-
                 case 'js':
-                    console.log('html')
                    return require("../assets/logos/js.svg");
-
                 case 'vue':
-                    console.log('html')
                    return require('../assets/logos/vue.svg');
                 case 'php':
-                    console.log('html')
                    return require('../assets/logos/php.svg');
                 case 'react':
-                    console.log('html')
                    return require('../assets/logos/react.svg');
+                case 'firebase':
+                   return require('../assets/logos/firebase.svg');
             }
         }
     }

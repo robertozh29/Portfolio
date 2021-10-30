@@ -5,7 +5,7 @@
             <Project
                 :name="'CRUD'" 
                 :link="'https://crud-da10d.web.app'"
-                :tech="['react']"
+                :tech="['react', 'firebase']"
             />
             <Project
                 :name="'Perfilador'" 
