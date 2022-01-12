@@ -18,13 +18,6 @@
                 :tech="['html','css', 'js']"
             />
         </div>
-        <div class="projects-container">
-            <Project 
-                :name="'Movie_Theater'" 
-                :link="'https://robertozh29.github.io/salaCine/'"
-                :tech="['html','css', 'js']"
-            />
-        </div>
     </div>
 </template>
 
