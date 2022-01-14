@@ -107,10 +107,9 @@ export default {
     .content{
       padding: 0 5%;
     }
-
     .lightsaber{
-    bottom: 2.5px;
-    right: -5px;
+      bottom: 2.5px;
+      right: -10px;
     }
 }
 
