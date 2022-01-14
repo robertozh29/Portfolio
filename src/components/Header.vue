@@ -6,7 +6,7 @@
         <h1>Roberto Zepeda</h1>
         <h2>Web Developer</h2>
         <p>I'm a software engineer specializing in building Front-End Web applications.</p>
-        <a class="boton" href="#projects" @click.prevent="scrollTo('#projects')">Projects</a>
+        <a class="boton" href="#projects" @click.prevent="scrollTo('#projects')">Resume</a>
     </div>
 </template>
 
@@ -94,7 +94,7 @@ a{
     }
     h1{ font-size: 54px;  color:#FFF;}
 
-    h2{ font-size: 58px; margin-bottom: 25px; }
+    h2{ font-size: 46px; margin-bottom: 25px; }
 
     p{ font-size: 16px; line-height: 28px }
 }
