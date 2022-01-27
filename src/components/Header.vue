@@ -5,7 +5,7 @@
         </div>
         <h1>Roberto Zepeda</h1>
         <h2>Web Developer</h2>
-        <p>I'm a software engineer specializing in building Front-End Web applications.</p>
+        <p>I'm a computer engineer specializing in building Front-End Web applications.</p>
         <a class="boton" href="CV.pdf" target="_blank">Resume</a>
     </div>
 </template>

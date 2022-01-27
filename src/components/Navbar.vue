@@ -8,25 +8,28 @@
             </a>
         </div>
 
-        <div class="links" id="links">
-            <ul>
-                <li>1.0
-                    <a href="#header" @click.prevent="scrollTo('#header')">Home</a>
-                </li>
-                <li>2.0
-                    <a href="#about" @click.prevent="scrollTo('#about')">About</a>
-                </li>
-                <li>3.0
-                    <a href="#projects" @click.prevent="scrollTo('#projects')">Projects</a>
-                </li>
-                <li>4.0
-                    <a href="#contact" @click.prevent="scrollTo('#contact')">Contact</a>
-                </li>    
-            </ul>
-            <div class="resume">
-                <a class="boton" href="CV.pdf" target="_blank">CV</a>
-            </div> 
-        </div>
+        <ul>
+            <li>1.0
+                <a href="#header" @click.prevent="scrollTo('#header')">Home</a>
+            </li>
+            <li>2.0
+                <a href="#about" @click.prevent="scrollTo('#about')">About</a>
+            </li>
+            <li>3.0
+                <a href="#projects" @click.prevent="scrollTo('#projects')">Projects</a>
+            </li>
+            <li>4.0
+                <a href="#contact" @click.prevent="scrollTo('#contact')">Contact</a>
+            </li>    
+            <li>
+                <a href="#">Español</a>
+            </li>  
+        </ul>
+        <div class="hamburger">
+            <a class="main-nav-toggle" @click.prevent="activeMenu">
+                <i>Menu</i>
+            </a>
+        </div> 
     </nav>
 </template>
 
@@ -39,18 +42,16 @@ export default {
         }
     },
     methods:{
-        show(){
-            if(this.checked){
-                document.getElementById('links').style.display = "flex"
-            }
-        },
-        close(){
-            if(!this.checked){
-                document.getElementById('links').style.display = "none"
-            }
-        },
         scrollTo(selector){
             document.querySelector(selector).scrollIntoView({behavior: 'smooth'})
+        },
+        activeMenu(event){
+            console.log('click')
+            if(event.target.className == "main-nav-toggle active-menu"){
+                event.target.className = "main-nav-toggle"
+            }else{
+                event.target.classList.add("active-menu");
+            }
         }
     },
 }
@@ -60,6 +61,7 @@ export default {
  .navbar{
     width: 100%;
     height: 10vh;
+    min-height: 80px;
     background-color: #171717;
     display: flex;
     justify-content: space-between;
@@ -98,45 +100,96 @@ export default {
     transform: rotate(-90deg);
 }
 
-.links{
-     width: max-content;
-     display: flex;
-     align-items: center;
-     margin-right: 6vw;
- }
  
- ul{
+ul{
     display: flex;
     align-items: center;
     list-style: none;
-    margin-right: 25px;
- }
+    margin-right: 4vw;
+}
  
- li{
-     margin: 0 15px;
+li{
+    margin: 0 15px;
      color: #2fceb3;
  }
 
- a{
+a{
     color: inherit; 
     text-decoration: inherit; 
     color:#CCC;
- }
-
- li a:hover, .dropdown a:hover {
-     color: #2fceb3;
-     text-decoration: underline;
- }
-
-.resume a{
-    background: transparent;
-    padding: 10px 15px;
-    border: 1px solid #2fceb3;
-    border-radius: 5px;
-    color: #2fceb3;
-    position: relative;
 }
 
+li a:hover, .dropdown a:hover {
+     color: #2fceb3;
+     text-decoration: underline;
+}
+
+.resume a{
+    color: #2fceb3;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #2fceb3;
+}
+
+
+/*Hamburger Menu */
+.hamburger{
+    display: none;
+    height: 26px;
+    margin-right: 7vw;
+}
+
+.hamburger i {
+    display: block;
+    text-indent: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 4px;
+    background-color: #2fceb3;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transition: all ease-out 0.1s;
+}
+
+a.main-nav-toggle{
+    display: block;
+    width: 28px;
+    height: 16px;
+    position: relative;
+}    
+
+a.main-nav-toggle::after,
+a.main-nav-toggle::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 0;
+    border-bottom: 4px solid #2fceb3;
+    width: 100%;
+    left: 0;
+    right: 0;
+    transition: all ease-out 0.3s;
+}
+
+a.main-nav-toggle::after{
+    top: 100%;
+}
+
+a.main-nav-toggle.active-menu::after{
+    transform: rotate(-45deg);
+    transform-origin: center;
+    top: 50%;
+}
+
+a.main-nav-toggle.active-menu::before{
+    transform: rotate(45deg);
+    transform-origin: center;
+    top: 50%
+}
+
+a.main-nav-toggle.active-menu i{
+    opacity: 0;
+}
 
 @media only screen and (max-width: 800px){
     .logo{
@@ -144,6 +197,9 @@ export default {
     }
     ul{
         display: none;
+    }
+    .hamburger{
+        display: inline-block;
     }
 }
 </style>

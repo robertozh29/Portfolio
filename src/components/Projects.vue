@@ -2,6 +2,11 @@
     <div class="projects" id="projects">
         <span class="subtitle"><p>02.</p><h2>My Projects</h2></span>
         <div class="projects-container">
+            <Project 
+                :name="'Snake_Game'" 
+                :link="'https://robertozh29.github.io/snakegame'"
+                :tech="['html','css', 'js']"
+            />
             <Project
                 :name="'CRUD'" 
                 :link="'https://crud-da10d.web.app'"
@@ -11,11 +16,6 @@
                 :name="'Perfilador'" 
                 :link="'http://perfilador.telescopiomx.com'"
                 :tech="['vue']"
-            />
-            <Project 
-                :name="'Snake_Game'" 
-                :link="'https://robertozh29.github.io/snakegame/V2'"
-                :tech="['html','css', 'js']"
             />
         </div>
     </div>
