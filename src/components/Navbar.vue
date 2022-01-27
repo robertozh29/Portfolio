@@ -8,7 +8,7 @@
             </a>
         </div>
 
-        <ul>
+        <ul id="menu">
             <li>1.0
                 <a href="#header" @click.prevent="scrollTo('#header')">Home</a>
             </li>
@@ -44,13 +44,17 @@ export default {
     methods:{
         scrollTo(selector){
             document.querySelector(selector).scrollIntoView({behavior: 'smooth'})
+            document.getElementById('menu').style.display = "none";
         },
         activeMenu(event){
-            console.log('click')
-            if(event.target.className == "main-nav-toggle active-menu"){
-                event.target.className = "main-nav-toggle"
+            const menu = document.getElementById('menu');
+
+            if(event.target.classList.contains("active-menu")){
+                event.target.classList.remove("active-menu");
+                menu.style.display = "none";
             }else{
                 event.target.classList.add("active-menu");
+                menu.style.display = "flex";
             }
         }
     },
@@ -197,6 +201,14 @@ a.main-nav-toggle.active-menu i{
     }
     ul{
         display: none;
+       width: 100%;
+       height: 90vh;
+       position: fixed;
+       bottom: 0;
+       flex-direction: column;
+       justify-content: space-evenly;
+       padding-bottom: 25%;
+       background: #171717cc;
     }
     .hamburger{
         display: inline-block;
