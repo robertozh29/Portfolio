@@ -136,6 +136,7 @@ li a:hover, .dropdown a:hover {
 
 /*Hamburger Menu */
 .hamburger{
+  display: none;
   top: 50%;
   right: 5%;
   transform: translate(-50%, -50%);
@@ -155,6 +156,17 @@ li a:hover, .dropdown a:hover {
   transition: 0.5s;
 }
 
+.hamburger.active-menu::after{
+     transform: translateY(-8px) rotate(135deg);
+}
+
+.hamburger.active-menu::before{
+ transform: translateY(13px) rotate(-135deg);
+}
+
+.hamburger.active-menu div{
+    opacity: 0;
+}
 
 @media only screen and (max-width: 800px){
     .logo{
