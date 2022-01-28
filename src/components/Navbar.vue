@@ -42,7 +42,9 @@ export default {
     methods:{
         scrollTo(selector){
             document.querySelector(selector).scrollIntoView({behavior: 'smooth'})
-            document.getElementById('menu').style.display = "none";
+            if(window.screen.width <= 800){
+                this.activeMenu() 
+            }
         },
         activeMenu(){
             const menu = document.getElementById('menu');
@@ -78,8 +80,8 @@ export default {
 
 .square{
     border: 2px solid #2fceb3;
-    height: 6vh;
-    width: 6vh;
+    height: 45px;
+    width: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -174,6 +176,7 @@ li a:hover, .dropdown a:hover {
         z-index: 1;
     }
     ul{
+        display: none;
         width: 100%;
         height: 100vh;
         position: fixed;
@@ -187,6 +190,7 @@ li a:hover, .dropdown a:hover {
         transition: all .5s linear;
     }
     ul.active{  
+        display: flex;
         transform: translateX(0%);
         opacity: 0.99;
     }
