@@ -8,7 +8,7 @@
             </a>
         </div>
 
-        <ul id="menu">
+        <ul id="menu" class="">
             <li>1.0
                 <a href="#header" @click.prevent="scrollTo('#header')">Home</a>
             </li>
@@ -25,10 +25,8 @@
                 <a href="#">Español</a>
             </li>  
         </ul>
-        <div class="hamburger">
-            <a class="main-nav-toggle" @click.prevent="activeMenu">
-                <i>Menu</i>
-            </a>
+        <div class="hamburger" id="hamburger" @click="activeMenu">
+            <div></div>
         </div> 
     </nav>
 </template>
@@ -46,15 +44,16 @@ export default {
             document.querySelector(selector).scrollIntoView({behavior: 'smooth'})
             document.getElementById('menu').style.display = "none";
         },
-        activeMenu(event){
+        activeMenu(){
             const menu = document.getElementById('menu');
+            const hamburger = document.getElementById('hamburger');
 
-            if(event.target.classList.contains("active-menu")){
-                event.target.classList.remove("active-menu");
-                menu.style.display = "none";
+            if(hamburger.classList.contains("active-menu")){
+                hamburger.classList.remove("active-menu");
+                menu.classList.remove('active')
             }else{
-                event.target.classList.add("active-menu");
-                menu.style.display = "flex";
+                hamburger.classList.add("active-menu");
+                menu.classList.add('active')
             }
         }
     },
@@ -97,7 +96,6 @@ export default {
     color: #2fceb3;
     font-size: 1.5rem;
     font-family: 'Montserrat', sans-serif;
-    transition: 0.5s ease;
 }
 
 .square:hover p{
@@ -110,6 +108,7 @@ ul{
     align-items: center;
     list-style: none;
     margin-right: 4vw;
+    transition: all 3s ease-in-out;
 }
  
 li{
@@ -137,78 +136,47 @@ li a:hover, .dropdown a:hover {
 
 /*Hamburger Menu */
 .hamburger{
-    display: none;
-    height: 26px;
-    margin-right: 7vw;
+  top: 50%;
+  right: 5%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 35px;
 }
 
-.hamburger i {
-    display: block;
-    text-indent: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    height: 4px;
-    background-color: #2fceb3;
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    transition: all ease-out 0.1s;
+.hamburger div,
+.hamburger::after,
+.hamburger::before{
+  background: #2fceb3;
+  content: "";
+  display: block;
+  height: 4px;
+  border-radius: 3px;
+  margin: 7px 0;
+  transition: 0.5s;
 }
 
-a.main-nav-toggle{
-    display: block;
-    width: 28px;
-    height: 16px;
-    position: relative;
-}    
-
-a.main-nav-toggle::after,
-a.main-nav-toggle::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    height: 0;
-    border-bottom: 4px solid #2fceb3;
-    width: 100%;
-    left: 0;
-    right: 0;
-    transition: all ease-out 0.3s;
-}
-
-a.main-nav-toggle::after{
-    top: 100%;
-}
-
-a.main-nav-toggle.active-menu::after{
-    transform: rotate(-45deg);
-    transform-origin: center;
-    top: 50%;
-}
-
-a.main-nav-toggle.active-menu::before{
-    transform: rotate(45deg);
-    transform-origin: center;
-    top: 50%
-}
-
-a.main-nav-toggle.active-menu i{
-    opacity: 0;
-}
 
 @media only screen and (max-width: 800px){
     .logo{
         margin-left: 5vw;
+        z-index: 1;
     }
     ul{
-        display: none;
-       width: 100%;
-       height: 90vh;
-       position: fixed;
-       bottom: 0;
-       flex-direction: column;
-       justify-content: space-evenly;
-       padding-bottom: 25%;
-       background: #171717cc;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding-bottom: 10%;  
+        background-color: #171717;   
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all .5s linear;
+    }
+    ul.active{  
+        transform: translateX(0%);
+        opacity: 0.99;
     }
     .hamburger{
         display: inline-block;
