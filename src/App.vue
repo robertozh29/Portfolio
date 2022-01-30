@@ -1,116 +1,30 @@
 <template>
-  <div class="app">
-
-    <!--Layout-->
-    <Navbar />
-    <Social />
-    <Lightsaber />
-    <!--End Layout-->
-    <div class="content">
-      <Header />
-      <About />
-      <Projects />
-      <Contact />
-    </div>
-
+  <div id="nav">
+    <router-link to="/">Ingles</router-link> |
+    <router-link to="/es">Español</router-link>
   </div>
+  <router-view/>
 </template>
 
-<script>
-// Layout
-import Navbar from './components/Navbar.vue'
-import Social from './components/Social.vue'
-import Lightsaber from './components/Lightsaber.vue'
-
-// Content
-import Header from './components/Header.vue'
-import About from './components/About.vue'
-import Projects from './components/Projects.vue'
-import Contact from './components/Contact.vue'
-// 
-
-
-
-export default {
-  name: 'App',
-  components: {
-    Navbar,
-    Lightsaber,
-    Social,
-    Header,
-    About,
-    Projects,
-    Contact
-  }
-}
-</script>
-
 <style>
-.app{
-  width: 100vw;
-  min-height: 100vh;
-  font-family: 'Raleway';
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  color: #cccccc;
-  background-color: #171717;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
 }
 
-.navbar{
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 2;
+#nav {
+  padding: 30px;
 }
 
-.content{
-  padding: 0 30vh;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
 }
 
-.header{
-  min-height: 110vh;
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
-
-.about{
-  min-height: 100vh;
-}
-
-.projects{
-  min-height: 100vh;
-}
-
-.contact{
-  min-height: 100vh;
-}
-
-.social{
-  position: fixed;
-  bottom: 2.5px;
-  left: calc(5vw - 40px);
-}
-
-.lightsaber{
-  position: fixed;
-  bottom: 2.5px;
-  right: 5vw;
-}
-
-@media screen and (max-width: 800px){
-    .app{
-      width: 100%;
-    }
-    .social{
-      display: none;
-    }
-    .content{
-      padding: 0 5%;
-    }
-    .lightsaber{
-      bottom: 2.5px;
-      right: -10px;
-    }
-}
-
 </style>
