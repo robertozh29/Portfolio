@@ -50,6 +50,7 @@ export default {
 
 .subtitle p{
     color: #2fceb3;
+    
 }
 
 .projects-container{
@@ -61,7 +62,7 @@ export default {
 
 @media only screen and (max-width: 800px){
     .subtitle{
-        text-align: center;
+        text-align: left;
     }
     .projects-container{
         flex-direction: column;

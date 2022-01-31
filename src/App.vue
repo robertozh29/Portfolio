@@ -1,8 +1,4 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Ingles</router-link> |
-    <router-link to="/es">Español</router-link>
-  </div>
   <router-view/>
 </template>
 
@@ -12,7 +8,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #CCC;
 }
 
 #nav {

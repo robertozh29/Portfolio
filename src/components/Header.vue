@@ -4,8 +4,8 @@
             <h1>Hello there...</h1>
         </div>
         <h1>Roberto Zepeda</h1>
-        <h2>Web Developer</h2>
-        <p>I'm a computer engineer specializing in building Front-End Web applications.</p>
+        <h2>{{profession}}</h2>
+        <p>{{phrase}}</p>
         <a class="boton" href="CV.pdf" target="_blank">Resume</a>
     </div>
 </template>
@@ -13,6 +13,16 @@
 <script>
 export default {
   name: 'Header',
+  props:{
+    profession: {
+      type: String,
+      default: "Web Developer"
+    },
+    phrase:{
+      type: String,
+      default: "I'm a computer engineer specializing in building Front-End Web applications."
+    }
+  },
   methods:{
     scrollTo(selector){
             document.querySelector(selector).scrollIntoView({behavior: 'smooth'})

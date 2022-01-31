@@ -10,19 +10,20 @@
 
         <ul id="menu" class="">
             <li>1.0
-                <a href="#header" @click.prevent="scrollTo('#header')">Home</a>
+                <a href="#header" @click.prevent="scrollTo('#header')">{{sections[0]}}</a>
             </li>
             <li>2.0
-                <a href="#about" @click.prevent="scrollTo('#about')">About</a>
+                <a href="#about" @click.prevent="scrollTo('#about')">{{sections[1]}}</a>
             </li>
             <li>3.0
-                <a href="#projects" @click.prevent="scrollTo('#projects')">Projects</a>
+                <a href="#projects" @click.prevent="scrollTo('#projects')">{{sections[2]}}</a>
             </li>
             <li>4.0
-                <a href="#contact" @click.prevent="scrollTo('#contact')">Contact</a>
+                <a href="#contact" @click.prevent="scrollTo('#contact')">{{sections[3]}}</a>
             </li>    
             <li>
-                <a href="#">Español</a>
+                <router-link to="/">Eng</router-link> |
+                <router-link to="/es">Esp</router-link>
             </li>  
         </ul>
         <div class="hamburger" id="hamburger" @click="activeMenu">
@@ -34,6 +35,14 @@
 <script>
 export default {
     name: 'Navbar',
+    props:{
+        sections:{
+            type: Array,
+            default(){
+                return ['Home','About','Projects','Contact']
+            }
+        }
+    },
     data(){
         return{
             checked: false
@@ -139,11 +148,8 @@ li a:hover, .dropdown a:hover {
 /*Hamburger Menu */
 .hamburger{
   display: none;
-  top: 50%;
-  right: 5%;
-  transform: translate(-50%, -50%);
-  position: absolute;
   width: 35px;
+  margin-right: 5vw;
 }
 
 .hamburger div,
