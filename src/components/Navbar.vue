@@ -81,6 +81,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     font-family: monospace;
+    z-index: 2;
  }
 
  .logo{
