@@ -6,7 +6,7 @@
         <h1>Roberto Zepeda</h1>
         <h2>{{profession}}</h2>
         <p>{{phrase}}</p>
-        <a class="boton" href="CV.pdf" target="_blank">Resume</a>
+        <a class="boton" @click="openResume">{{resume}}</a>
     </div>
 </template>
 
@@ -21,12 +21,23 @@ export default {
     phrase:{
       type: String,
       default: "I'm a computer engineer specializing in building Front-End Web applications."
+    },
+    resume: {
+      type: String,
+      default: "Resume"
+    },
+    resumeLink: {
+      type: String,
+      default: "cv_eng.pdf"
     }
   },
   methods:{
     scrollTo(selector){
-            document.querySelector(selector).scrollIntoView({behavior: 'smooth'})
-        }
+      document.querySelector(selector).scrollIntoView({behavior: 'smooth'})
+    },
+    openResume(){
+      window.open(this.resumeLink);
+    }
   }
 }
 </script>

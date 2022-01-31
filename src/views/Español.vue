@@ -21,7 +21,9 @@ export default {
         },
         header:{
           profession: "Ingeniero en Sistemas",
-          phrase: "Programador Web especializado en construir aplicaciones front-end."
+          phrase: "Programador Web especializado en construir aplicaciones front-end.",
+          resume: 'Curriculum',
+          resumeLink: 'cv_esp.pdf'
         }
       }
     }

@@ -7,6 +7,11 @@ const routes = [
     component: () => import('../views/Home.vue')
   },
   {
+    path: '/en',
+    name: 'English',
+    component: () => import('../views/Home.vue')
+  },
+  {
     path: '/es',
     name: 'Español',
     component: () => import('../views/Español.vue')

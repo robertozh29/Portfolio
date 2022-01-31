@@ -9,6 +9,7 @@
       <Header 
         :profession="info.header.profession"
         :phrase="info.header.phrase"
+        :resume="info.header.resume"
       />
       <About />
       <Projects />
@@ -39,7 +40,9 @@ export default {
           },
           header:{
             profession: "Computer Engineer",
-            phrase: "Hi. I'm a Developer specialized in building Front-end Web applications."
+            phrase: "Hi. I'm a Developer specialized in building Front-end Web applications.",
+            resume: 'Resume',
+            resumeLink: "cv_eng.pdf"
           }
         }
       }
