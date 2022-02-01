@@ -1,8 +1,6 @@
 <template>
        <div class="project" :class="name">
-            <div class="frame" :class="name">
-                <a class="proyect-link" target="_blank" :href="link"></a>
-            </div>
+            <a :href="link" target="_blank"><img :src="require(`../assets/projects/${img}`)" alt="" srcset=""></a>
             <p class="nombre">{{name}}</p>
             <div class="tec">
                 <img v-for="img,index in tech" :key="index"  v-bind:src="getImage(img)" :alt="img" >         
@@ -16,13 +14,24 @@ export default {
     props:{
         name: String,
         link: String,
+        img:{
+            type: String,
+            default: "default.png"
+        },
         tech: Array
+    },
+    data(){
+        return{
+            h: 'react.svg'
+        }
     },
     methods:{
         redirect(){
             window.open(this.link)
         },
         getImage(img){
+             let h = 'react.svg';
+            console.log(`../assets/logos/${h}`);
             switch(img){
                 case 'html':
                     return require(`../assets/logos/html_5.svg`);
@@ -39,6 +48,7 @@ export default {
                 case 'firebase':
                    return require('../assets/logos/firebase.svg');
             }
+           
         }
     }
 }
@@ -56,48 +66,9 @@ export default {
     align-items: center;
     justify-content: space-between;
 }
-
-.frame{
-    width: 100%;
-    height: 80%;
-    background-color:#0B0B0D;
+img{
+    width: 99%;
     border-radius: 15px;
-    background-position: center;
-    background-size: cover;
-    cursor: pointer;   
-}
-
-.frame:hover{
-    transform: scale(1.02);
-}
-
-.frame a::after{
-    content: '';
-    display: block;
-    height: 100%;
-    position: relative;
-}
-
-.Snake_Game .frame{
-    background-image: url('../assets/snake.png');
-}
-
-.Perfilador .frame{
-    background-image: url('../assets/projects/perfilador.png');
-}
-
-
-.Movie_Theater .frame{
-    background-image: url('../assets/projects/movie.png');
-}
-
-.Snake_Game .frame{
-    background-image: url('../assets/snake.png');
-}
-
-
-.CRUD.frame{
-    background-image: url('../assets/projects/crud.png');
 }
 
 

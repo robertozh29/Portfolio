@@ -3,20 +3,34 @@
         <span class="subtitle"><p>02.</p><h2>My Projects</h2></span>
         <div class="projects-container">
             <Project 
-                :name="'Snake_Game'" 
-                :link="'https://robertozh29.github.io/snakegame'"
+                name="Snake Game" 
+                link="https://robertozh29.github.io/snakegame"
+                img="snake.png"
                 :tech="['html','css', 'js']"
             />
             <Project
-                :name="'CRUD'" 
-                :link="'https://crud-da10d.web.app'"
+                name="React CRUD" 
+                link="https://crud-da10d.web.app"
+                img="crud.png"
                 :tech="['react', 'firebase']"
             />
             <Project
-                :name="'Perfilador'" 
-                :link="'http://perfilador.telescopiomx.com'"
+                name="Perfilador Financiero" 
+                link="http://perfilador.telescopiomx.com"
+                img="perfilador.png"
                 :tech="['vue']"
             />
+            
+        </div>
+        <div class="projects-container">
+            <Project/>
+            <Project
+                name="API consuming" 
+                link="https://nifty-carson-901d54.netlify.app/"
+                img="jsonplaceholder.png"
+                :tech="['vue']"
+            />
+            <Project/>
         </div>
     </div>
 </template>
