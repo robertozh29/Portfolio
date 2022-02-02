@@ -11,7 +11,10 @@
         :phrase="info.header.phrase"
         :resume="info.header.resume"
       />
-      <About />
+      <About 
+        :description="info.about.description"
+        :experience="info.about.experience"
+      />
       <Projects />
       <Contact />
     </div>
@@ -43,6 +46,15 @@ export default {
             phrase: "Hi. I'm a Developer specialized in building Front-end Web applications.",
             resume: 'Resume',
             resumeLink: "cv_eng.pdf"
+          },
+          about:{
+            description:`I'm a developer  with a big passsion
+                for technology and it's applicability. Since I was a kid I've been dreaming 
+                about the future of technology that we as humans will be developing in the near future,
+                now as an adult my dream it's to contribute and learn as much as I can 
+                from the modern and future technologys.`,
+                experience: `Currently I've been working developing Front-end and Back-end Web applications for a Marketign Agency 
+                and some freelancing projects, working with several frameworks and differents technologies such as:`
           }
         }
       }

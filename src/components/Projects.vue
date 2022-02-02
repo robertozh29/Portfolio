@@ -23,14 +23,14 @@
             
         </div>
         <div class="projects-container">
-            <Project/>
+            
             <Project
                 name="API consuming" 
                 link="https://nifty-carson-901d54.netlify.app/"
                 img="jsonplaceholder.png"
                 :tech="['vue']"
             />
-            <Project/>
+            
         </div>
     </div>
 </template>

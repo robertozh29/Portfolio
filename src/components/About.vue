@@ -5,15 +5,8 @@
 
         <div class="about-me">
                 
-            <p>Hello! My names is Robert, I'm a web developer  with a big passsion
-                for technology and it's applicability. Since I was a kid I've been dreaming 
-                about the future of technology that we as humans will be developing in the near future,
-                now as an adult my dream it's to contribute and learn as much as I can 
-                from the modern and future technologys.
-            </p>
-            <p>Currently I've been working developing Front-end and Back-end Web applications for a Marketign Agency and some freelancing projects,
-                working with several frameworks and differents technologies such as:
-            </p>
+            <p>{{ description }}</p>
+            <p>{{ experience }}</p>
             <div class="tec">
                     <ul>
                         <li>HTML5</li>
@@ -39,6 +32,15 @@
 
     </div>
 </template>
+
+<script>
+export default {
+    props:{
+        description: String,
+        experience: String
+    }
+}
+</script>
 
 <style scoped>
 .about{
