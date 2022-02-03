@@ -15,19 +15,25 @@
                 :tech="['react', 'firebase']"
             />
             <Project
-                name="Perfilador Financiero" 
-                link="http://perfilador.telescopiomx.com"
-                img="perfilador.png"
-                :tech="['vue']"
+                name="Menu Digital" 
+                link="https://nostalgic-stonebraker-84b324.netlify.app/"
+                img="lacasadelasflores.png"
+                :tech="['html','css','js']"
             />
             
         </div>
-        <div class="projects-container">
+        <div class="projects-container dos">
             
             <Project
                 name="API consuming" 
                 link="https://nifty-carson-901d54.netlify.app/"
                 img="jsonplaceholder.png"
+                :tech="['vue']"
+            />
+            <Project
+                name="Perfilador Financiero" 
+                link="http://perfilador.telescopiomx.com"
+                img="perfilador.png"
                 :tech="['vue']"
             />
             
@@ -73,7 +79,10 @@ export default {
     justify-content: space-around;
     margin-bottom: 35px;
 }
-
+.dos{
+    margin-top: 15px;
+    justify-content: space-evenly;
+}
 @media only screen and (max-width: 800px){
     .subtitle{
         text-align: left;
