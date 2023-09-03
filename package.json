@@ -2,8 +2,8 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "description": "## Project setup ``` npm install ```",
-  "author": "",
+  "description": "Personal portfolio for Roberto Zepeda",
+  "author": "Roberto Zepeda Hipolito",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -12,20 +12,18 @@
   "main": "babel.config.js",
   "dependencies": {
     "core-js": "^3.6.5",
+    "npm": "^9.8.1",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-eslint": "^5.0.8",
+    "@vue/cli-plugin-router": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
     "@vue/compiler-sfc": "^3.0.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0",
-    "node-sass": "^5.0.0",
-    "sass-loader": "^10.0.5"
+    "eslint": "^8.47.0",
+    "eslint-plugin-vue": "^9.17.0"
   },
   "eslintConfig": {
     "root": true,
@@ -34,23 +32,10 @@
     },
     "extends": [
       "plugin:vue/vue3-essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ],
-  "bugs": {
-    "url": "https://github.com/robertozh29/Portfolio/issues"
+      "eslint-config-standard"
+    ]
   },
   "homepage": "https://github.com/robertozh29/Portfolio#readme",
-  "keywords": [],
   "license": "ISC",
   "repository": {
     "type": "git",

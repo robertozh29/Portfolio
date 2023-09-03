@@ -14,7 +14,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .contendor{
     width: 100%;
     background-color: #171717;

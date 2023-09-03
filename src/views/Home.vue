@@ -22,7 +22,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import Navbar from '../components/Navbar.vue'
 import Lightsaber from '../components/Lightsaber.vue'
 import Social from '../components/Social.vue'
@@ -77,61 +76,65 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+/*----- HOME CONTAINER ----- */
 .home{
   width: 100%;
   min-height: 100vh;
   background-color: #171717;
   text-align: left;
-  .navbar{
-    position: fixed;
-  }
-  .social{
-    position: fixed;
-    bottom: 0;
-    left: 5vw;
-  }
-  .lightsaber{
+}
+
+.home .navbar{
+  position: fixed;
+}
+
+.home .social{
+  position: fixed;
+  bottom: 0;
+  left: 5vw;
+}
+
+.lightsaber{
     position: fixed;
     bottom: 0;
     right: 5vw;
-  }
-  .content{
-    width: 100%;
-    padding: 0 15vw;
-  }
-  .header,
-  .about,
-  .projects,
-  .contact{
-    min-height: 100vh;
-    padding-top: 5vh;
-    .subtitle{
-      font-size: 5px;
-    }
-  }
+}
+.content{
+  width: 100%;
+  padding: 0 15vw;
+}
+.header,
+.about,
+.projects,
+.contact{
+  min-height: 100vh;
+  padding-top: 5vh;
+}
+
+.subtitle{
+    font-size: 5px;
+
 }
 
 @media screen and (max-width: 800px){
-  .home{
-    .social{
-      display: none;
-    }
-    .lightsaber{
-      bottom: 2.5px;
-      right: -10px;
-    }
-    .content{
-      padding: 0 10vw;
-    }
-    header,
-    .about,
-    .projects,
-    .contact{
-      padding-top: 18px;
-    }
+  .social{
+    display: none;
+  }
+  .lightsaber{
+    bottom: 2.5px;
+    right: -10px;
+  }
+  .content{
+    padding: 0 10vw;
+  }
+  header,
+  .about,
+  .projects,
+  .contact{
+    padding-top: 18px;
   }
 }
 
-</style>>
+</style>
 
