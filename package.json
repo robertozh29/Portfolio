@@ -31,8 +31,7 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint-config-standard"
+      "plugin:vue/vue3-recommended"
     ]
   },
   "homepage": "https://github.com/robertozh29/Portfolio#readme",
