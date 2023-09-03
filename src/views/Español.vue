@@ -1,17 +1,17 @@
 <template>
-  <Home 
+  <English 
     :info="translation"
   />
 </template>
 
 <script>
 // @ is an alias to /src
-import Home from './Home'
+import English from './English'
 
 export default {
   name: 'Español',
   components: {
-    Home
+    English
   },
   data(){
     return{
