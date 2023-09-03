@@ -9,10 +9,10 @@
                 :tech="['html','css', 'js']"
             />
             <Project
-                name="React CRUD" 
-                link="https://crud-da10d.web.app"
-                img="crud.png"
-                :tech="['react', 'firebase']"
+                name="Marvel searcher" 
+                link="https://clever-albattani-e8701a.netlify.app/"
+                img="marvel-api.png"
+                :tech="['vue']"
             />
             <Project
                 name="Menu Digital" 
@@ -29,6 +29,12 @@
                 link="https://nifty-carson-901d54.netlify.app/"
                 img="jsonplaceholder.png"
                 :tech="['vue']"
+            />
+            <Project
+                name="React CRUD" 
+                link="https://crud-da10d.web.app"
+                img="crud.png"
+                :tech="['react', 'firebase']"
             />
             <Project
                 name="Perfilador Financiero" 
