@@ -1,31 +1,61 @@
 <template>
     <div class="home">
         <Navbar />
+        <Social />
+        <Lightsaber />
         <div class="content">
+
             <header class="header">
                 <div class="typewriter">
                     <h1>Hello there...</h1>
                 </div>
                 <h1>Roberto Zepeda</h1>
                 <h2>Systems Engineer</h2>
-                <p>Developer specialized in building Web applications</p>
+                <p>Software developer specialized in building Web applications</p>
                 <a class="boton" @click="openResume">Resume</a>
             </header>
+            <About
+                :description="about.description"
+                :experience="about.experience" />
+            
         </div>
     </div>
 </template>
 
 <script>
 import Navbar from '../components/Navbar.vue'
+import Lightsaber from '../components/Lightsaber.vue'
+import Social from '../components/Social.vue'
+import About from '../components/About.vue'
 
 export default {
     name: 'Home',
     components:{
-        Navbar
+        Navbar,
+        Lightsaber,
+        Social,
+        About
     },
-    data () {
-      return {}
+    data(){
+    return{
+        navbar:{
+            sections: ["Inicio", "Sobre mi", "Proyectos", "Contacto"]
+        },
+        header:{
+            profession: "Ingeniero en Sistemas",
+            phrase: "Programador Web especializado en construir aplicaciones front-end.",
+            resume: 'Curriculum',
+            resumeLink: 'cv_esp.pdf'
+        },
+        about:{
+            description:`Hi, my names is roberto a software developer with a big passsion for technology and it's applicability. 
+            Since I was a kid I've been dreaming about the future of technology that we as humans will be developing in the near future, 
+            now as an adult my dream it's to contribute and learn as much as I can from the modern and future technologys.`,
+            experience: `My experience comes from several software industries such as web development and hardware validation, 
+            working with companies like Intel. `
+        }
     }
+  }
 }
 
 </script>
@@ -44,7 +74,19 @@ export default {
   position: fixed;
 }
 
-.content{
+.home .social{
+  position: fixed;
+  bottom: 0;
+  left: 5vw;
+}
+
+.home .lightsaber{
+    position: fixed;
+    bottom: 0;
+    right: 5vw;
+}
+
+.home .content{
   width: 100%;
   padding: 0 15vw;
 }

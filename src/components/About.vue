@@ -9,26 +9,25 @@
             <p>{{ experience }}</p>
             <div class="tec">
                     <ul>
-                        <li>HTML5</li>
-                        <li>CSS/SASS</li>
+                        <li>Python</li>
+                        <li>Javascript</li>
                        
                     </ul>
                     <ul>
-                        <li>Bootstrap</li>
-                         <li>Javascript</li>  
-                    </ul>
-                    <ul>
+                        <li>SQL</li>
                         <li>Vue.js</li>
-                        <li>React.js</li>
+                       
                     </ul>
                     <ul>
-                        <li>PHP</li>
-                         <li>MySQL</li>
+                        <li>Flask</li>
+                        <li>Google Cloud</li>  
+                    </ul>
+                    <ul>
+                        <li>PostgreSQL</li>
+                        <li>Firebase</li>
                     </ul>
             </div>
         </div>   
-
-        <img src="../assets/yo.jpg" alt="">
 
     </div>
 </template>
@@ -45,7 +44,7 @@ export default {
 <style scoped>
 .about{
     display: flex;
-    justify-content: center;
+    justify-content: stretch;
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
@@ -60,7 +59,7 @@ export default {
 }
 
 .about-me{
-    width: 70%;
+    width: 100%;
 }
 
 .about img{
@@ -95,13 +94,12 @@ p{
 }
 
 .tec{
-    padding: 25px 15px;
+    padding: 30px 15px 25px 15px;
     display: flex;
-    justify-content: flex-start;
+    justify-content:space-between;
 }
 
 ul{
-    margin-right: 15%;
     line-height: 2;
 }
 ul li{
