@@ -1,7 +1,7 @@
 <template>
     <div class="about" id="about">  
 
-        <span class="subtitle"><p>01.</p><h2>About me</h2></span>    
+        <span class="subtitle"><p>02.</p><h2>About me</h2></span>    
 
         <div class="about-me">
                 

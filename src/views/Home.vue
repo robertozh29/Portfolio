@@ -5,18 +5,20 @@
         <Lightsaber />
         <div class="content">
 
-            <header class="header">
+            <header class="header" id="header">
                 <div class="typewriter">
                     <h1>Hello there...</h1>
                 </div>
                 <h1>Roberto Zepeda</h1>
                 <h2>Systems Engineer</h2>
-                <p>Software developer specialized in building Web applications</p>
+                <p>Software developer specialized in building web applications</p>
                 <a class="boton" @click="openResume">Resume</a>
             </header>
             <About
                 :description="about.description"
-                :experience="about.experience" />
+                :experience="about.experience"
+            />
+            <Contact />
             
         </div>
     </div>
@@ -27,6 +29,7 @@ import Navbar from '../components/Navbar.vue'
 import Lightsaber from '../components/Lightsaber.vue'
 import Social from '../components/Social.vue'
 import About from '../components/About.vue'
+import Contact from '../components/Contact.vue'
 
 export default {
     name: 'Home',
@@ -34,18 +37,13 @@ export default {
         Navbar,
         Lightsaber,
         Social,
-        About
+        About,
+        Contact
     },
     data(){
     return{
         navbar:{
-            sections: ["Inicio", "Sobre mi", "Proyectos", "Contacto"]
-        },
-        header:{
-            profession: "Ingeniero en Sistemas",
-            phrase: "Programador Web especializado en construir aplicaciones front-end.",
-            resume: 'Curriculum',
-            resumeLink: 'cv_esp.pdf'
+            sections: ["Home", "About", "Projects", "Contact"]
         },
         about:{
             description:`Hi, my names is roberto a software developer with a big passsion for technology and it's applicability. 
