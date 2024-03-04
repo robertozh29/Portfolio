@@ -18,6 +18,7 @@
                 :description="about.description"
                 :experience="about.experience"
             />
+            <Projects />
             <Contact />
             
         </div>
@@ -29,6 +30,7 @@ import Navbar from '../components/Navbar.vue'
 import Lightsaber from '../components/Lightsaber.vue'
 import Social from '../components/Social.vue'
 import About from '../components/About.vue'
+import Projects from '../components/Projects.vue'
 import Contact from '../components/Contact.vue'
 
 export default {
@@ -38,6 +40,7 @@ export default {
         Lightsaber,
         Social,
         About,
+        Projects,
         Contact
     },
     data(){

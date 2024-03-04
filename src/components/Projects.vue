@@ -1,6 +1,6 @@
 <template>
     <div class="projects" id="projects">
-        <span class="subtitle"><p>02.</p><h2>My Projects</h2></span>
+        <span class="subtitle"><p>03.</p><h2>My Projects</h2></span>
         <div class="projects-container">
             <Project 
                 name="Snake Game" 
@@ -15,32 +15,10 @@
                 :tech="['vue']"
             />
             <Project
-                name="Menu Digital" 
+                name="Digital Menu" 
                 link="https://nostalgic-stonebraker-84b324.netlify.app/"
                 img="lacasadelasflores.png"
                 :tech="['html','css','js']"
-            />
-            
-        </div>
-        <div class="projects-container dos">
-            
-            <Project
-                name="API consuming" 
-                link="https://nifty-carson-901d54.netlify.app/"
-                img="jsonplaceholder.png"
-                :tech="['vue']"
-            />
-            <Project
-                name="React CRUD" 
-                link="https://crud-da10d.web.app"
-                img="crud.png"
-                :tech="['react', 'firebase']"
-            />
-            <Project
-                name="Perfilador Financiero" 
-                link="http://perfilador.telescopiomx.com"
-                img="perfilador.png"
-                :tech="['vue']"
             />
             
         </div>
