@@ -11,7 +11,7 @@
                 </div>
                 <h1>Roberto Zepeda</h1>
                 <h2>Systems Engineer</h2>
-                <p>Software developer specialized in building web applications</p>
+                <p>Experienced in building web applications</p>
                 <a class="boton" @click="openResume">Resume</a>
             </header>
             <About
@@ -49,12 +49,17 @@ export default {
             sections: ["Home", "About", "Projects", "Contact"]
         },
         about:{
-            description:`Hi, my names is roberto a software developer with a big passsion for technology and it's applicability. 
+            description:`Hi! my names is Roberto, I'm a software developer with a big passsion for technology and it's applicability. 
             Since I was a kid I've been dreaming about the future of technology that we as humans will be developing in the near future, 
             now as an adult my dream it's to contribute and learn as much as I can from the modern and future technologys.`,
             experience: `My experience comes from several software industries such as web development and hardware validation, 
             working with companies like Intel. `
         }
+    }
+  },
+  methods:{
+    openResume(){
+      window.open('resume.pdf');
     }
   }
 }
