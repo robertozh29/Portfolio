@@ -8,12 +8,17 @@ const routes = [
   {
     path: '/en',
     name: 'English',
-    component: () => import('../views/English.vue')
+    component: () => import('../views/Home.vue')
   },
   {
     path: '/es',
     name: 'Español',
-    component: () => import('../views/Español.vue')
+    component: () => import('../views/Home.vue')
+  },
+  {
+    path: '/snakegame',
+    name: 'SnakeGame',
+    component: () => import('../views/SnakeGame.vue')
   }
 ]
 
