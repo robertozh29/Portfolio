@@ -6,17 +6,14 @@
         <div class="about-me">
                 
             <p>{{ description }}</p>
-            <p>{{ experience }}</p>
             <div class="tec">
                     <ul>
                         <li>Python</li>
                         <li>Javascript</li>
-                       
                     </ul>
                     <ul>
                         <li>SQL</li>
                         <li>Vue.js</li>
-                       
                     </ul>
                     <ul>
                         <li>Flask</li>
@@ -28,7 +25,7 @@
                     </ul>
             </div>
         </div>   
-
+        <img src="../assets/yo.jpg" alt="">
     </div>
 </template>
 
@@ -44,8 +41,8 @@ export default {
 <style scoped>
 .about{
     display: flex;
-    justify-content: stretch;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
     align-content: center;
     flex-wrap: wrap;
     width: 100%;
@@ -59,21 +56,19 @@ export default {
 }
 
 .about-me{
-    width: 100%;
+    width: 70%;
 }
 
 .about img{
     width: 20%;
     height: auto;
-    margin: 5%;
-    border-radius: 5px;
+    border-radius: 2px;
+    opacity: .70;
 }
 
 .about-me p:first-of-type{
     margin-bottom: 15px;
 }
-
-
 
 span p{
     color: #2fceb3;
@@ -115,10 +110,6 @@ ul li::before {
   margin-left: -1em;
 }
 
-
-img{
-    width: 80%;
-}
 @media screen and (max-width: 800px){
     .about-me{
         width: 100%;
