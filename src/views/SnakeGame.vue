@@ -22,10 +22,6 @@
                 </div>
             </div>
         </div>
-        <span class="logo">
-            <img src="../assets/snakegame/joystick.png" alt="Joystick image">
-            <p>Roberto Zepeda - 2020</p>
-        </span>
     </div>
 </template>
 
@@ -41,7 +37,8 @@ export default {
           moveX: 0,
           moveY: 0,
           button: 0,
-          gameStatus: "play"
+          gameStatus: "play",
+          score: 0
       }  
     },
     methods:{
@@ -53,6 +50,11 @@ export default {
                     ctx.fillRect(x, y, 10, 10);
                 }     
             }
+        },
+        generateFood(){
+            var x = 10 * Math.floor(Math.random() * 25);
+            var y = 10 * Math.floor(Math.random() * 25 );       
+            this.food = {x: x, y: y};
         },
         drawFood(ctx){
             var food = this.food
@@ -66,36 +68,37 @@ export default {
             ctx.fillRect(part.x, part.y, 10, 10); 
             });
         },
-        moveSnake(){
-            const head = {x: snake[0].x + moveX, y: snake[0].y + moveY};
-            snake.unshift(head)
-            snake.pop();
+        moveSnake(ctx){
+            const scoreboard = document.getElementById('score');
+            const head = {x: this.snake[0].x + this.moveX, y: this.snake[0].y + this.moveY};
+            this.snake.unshift(head)
+            this.snake.pop();
 
-            if(food.x == snake[0].x && food.y == snake[0].y ){
-                audio.play();
-                generateFood();
-                var tail = {x: snake[snake.length-1].x + moveX, y: snake[snake.length-1].y + moveY};
-                snake.push(tail)
-                score++;
-                scoreboard.innerHTML = score;
+            if(this.food.x == this.snake[0].x && this.food.y == this.snake[0].y ){
+                //audio.play();
+                this.generateFood();
+                var tail = {x: this.snake[this.snake.length-1].x + this.moveX, y: this.snake[this.snake.length-1].y + this.moveY};
+                this.snake.push(tail)
+                this.score++;
+                scoreboard.innerHTML = this.score;
             }
 
             //Verificando si la serpiente toco un borde o su cuerpo
             if(head.x === -10 || head.y === -10){    
                 alert("Game Over");
-                gameStatus = "over";
+                this.gameStatus = "over";
                 scoreboard.innerHTML = 0;
             } 
             else if ((head.x === 250 || head.y === 250)){
                 alert("Game Over");
-                gameStatus = "over";
+                this.gameStatus = "over";
                 scoreboard.innerHTML = 0;
             }
 
-            for (let i = 4; i < snake.length; i++) {
-                if (snake[i].x === snake[0].x && snake[i].y === snake[0].y){
+            for (let i = 4; i < this.snake.length; i++) {
+                if (this.snake[i].x === this.snake[0].x && this.snake[i].y === this.snake[0].y){
                     alert("Game Over");
-                    gameStatus = "over";
+                    this.gameStatus = "over";
                     scoreboard.innerHTML = 0;
                 }
             }
@@ -125,15 +128,33 @@ export default {
 
             console.log("X,Y:", this.moveX, this.moveY)
         },
+        endGame(ctx){
+            this.snake = [
+              {x:120 , y:120}
+            ]
+            this.score = 0;
+            this.moveX = 0;
+            this.moveY = 0;
+            this.generateFood(ctx)
+            this.gameStatus = "play"
+            this.main(ctx);
+        },
         main(ctx){
           setTimeout(() => {
             if(this.gameStatus == "pause"){
-              moveY = 0;
-              moveX = 0;
+              this.moveY = 0;
+              this.moveX = 0;
+            }else{
+              this.drawMap(ctx)
+              this.drawFood(ctx)
+              this.moveSnake(ctx);
+              this.drawSnake(ctx)
             }
-            this.drawMap(ctx)
-            this.drawFood(ctx)
-            this.drawSnake(ctx)
+            if(this.gameStatus === "over"){
+              this.endGame(ctx);
+            }else{
+              this.main(ctx);
+            }    
           }, 140);
         }
         
@@ -289,19 +310,6 @@ body {
   margin-bottom: 15px;
 }
 
-.logo {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  color: #ccc;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.logo img {
-  margin-bottom: 5px;
-  width: 50px;
-}
 
 @media screen and (max-width: 430px) {
   :root {
@@ -317,24 +325,6 @@ body {
     padding: 0;
     background-color: rgba(0, 0, 0, 0);
     border-radius: none;
-  }
-
-  .logo {
-    position: absolute;
-    bottom: 10px;
-    right: calc(50vw - 40px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .logo p {
-    font-size: 9px;
-    color: rgb(130, 130, 130);
-  }
-  .logo img {
-    margin-bottom: 5px;
-    width: 25px;
   }
 }
 </style>
