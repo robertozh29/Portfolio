@@ -46,6 +46,7 @@ export default {
     },
     methods:{
         drawMap(ctx){
+          console.log(ctx)
             for (let y = 0; y < 250; y +=10) {  
                 for (let x = 0; x < 250; x +=10) {
                     ctx.fillStyle = 'rgb(135, 161, 82)';
@@ -123,6 +124,17 @@ export default {
             this.button = 0;
 
             console.log("X,Y:", this.moveX, this.moveY)
+        },
+        main(ctx){
+          setTimeout(() => {
+            if(this.gameStatus == "pause"){
+              moveY = 0;
+              moveX = 0;
+            }
+            this.drawMap(ctx)
+            this.drawFood(ctx)
+            this.drawSnake(ctx)
+          }, 140);
         }
         
         
@@ -136,9 +148,7 @@ export default {
         const left = document.getElementById("left");
         const right = document.getElementById("right");
         
-        this.drawMap(ctx)
-        this.drawFood(ctx)
-        this.drawSnake(ctx)
+        this.main(ctx)
         
         up.addEventListener('click', (e)=>{   
             this.button = 87;  
@@ -185,7 +195,6 @@ body {
 .snakegame {
   background-color: rgb(20, 20, 20);
   width: 100vw;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
