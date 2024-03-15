@@ -28,8 +28,7 @@ function drawMap(){
         }     
     }
 }
-//(135, 161, 82)
-//124,176,97
+
 function generateFood(){
     var x = 10 * Math.floor(Math.random() * 25);
     var y = 10 * Math.floor(Math.random() * 25 );       
@@ -85,27 +84,6 @@ function moveSnake(){
 
 }
 
-function main(){ 
-    var time = 140; 
-
-    setTimeout(() => {
-        if(gameStatus == "pause"){
-            moveY = 0;
-            moveX = 0;
-        }else{
-            drawMap();
-            drawFood();
-            moveSnake();
-            drawSnake();
-        }
-        if(gameStatus === "over"){
-            endGame();
-        }else{
-            main();
-        }
-    }, time);
-}
-
 function endGame(){
     snake = [
       {x:120 , y:120}
@@ -142,9 +120,30 @@ function changeDirection(e){
     button = 0;
 }
 
-generateFood();
-main();
-document.addEventListener("keydown", changeDirection);
+function main(){ 
+    var time = 140; 
+    
+    setTimeout(() => {
+        if(gameStatus == "pause"){
+            moveY = 0;
+            moveX = 0;
+        }else{
+            drawMap();
+            drawFood();
+            moveSnake();
+            drawSnake();
+        }
+        if(gameStatus === "over"){
+            endGame();
+        }else{
+            main();
+        }
+    }, time);
+}
+
+// generateFood();
+// main();
+// document.addEventListener("keydown", changeDirection);
 
 up.onclick= function(){ 
     button = 87;  

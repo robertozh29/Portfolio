@@ -33,14 +33,139 @@
 <script>
 export default {
     name: 'SnakeGame',
+    data(){
+      return{
+        // Game variables
+          snake: [{x:120, y:120}],
+          food: {x: 0, y: 0},
+          moveX: 0,
+          moveY: 0,
+          button: 0,
+          gameStatus: "play"
+      }  
+    },
     methods:{
+        drawMap(ctx){
+            for (let y = 0; y < 250; y +=10) {  
+                for (let x = 0; x < 250; x +=10) {
+                    ctx.fillStyle = 'rgb(135, 161, 82)';
+                    ctx.fillRect(x, y, 10, 10);
+                }     
+            }
+        },
+        drawFood(ctx){
+            var food = this.food
+            ctx.fillStyle = 'red';
+            ctx.fillRect(food.x, food.y, 10, 10);
+            ctx.stroke();
+        },
+        drawSnake(ctx){
+            this.snake.forEach(part => {
+            ctx.fillStyle = 'black';
+            ctx.fillRect(part.x, part.y, 10, 10); 
+            });
+        },
+        moveSnake(){
+            const head = {x: snake[0].x + moveX, y: snake[0].y + moveY};
+            snake.unshift(head)
+            snake.pop();
+
+            if(food.x == snake[0].x && food.y == snake[0].y ){
+                audio.play();
+                generateFood();
+                var tail = {x: snake[snake.length-1].x + moveX, y: snake[snake.length-1].y + moveY};
+                snake.push(tail)
+                score++;
+                scoreboard.innerHTML = score;
+            }
+
+            //Verificando si la serpiente toco un borde o su cuerpo
+            if(head.x === -10 || head.y === -10){    
+                alert("Game Over");
+                gameStatus = "over";
+                scoreboard.innerHTML = 0;
+            } 
+            else if ((head.x === 250 || head.y === 250)){
+                alert("Game Over");
+                gameStatus = "over";
+                scoreboard.innerHTML = 0;
+            }
+
+            for (let i = 4; i < snake.length; i++) {
+                if (snake[i].x === snake[0].x && snake[i].y === snake[0].y){
+                    alert("Game Over");
+                    gameStatus = "over";
+                    scoreboard.innerHTML = 0;
+                }
+            }
+
+        },
+        changeDirection(e){
+            var key;
+            this.button === 0 ? key = e.keyCode : key = this.button;
+        
+            if((key === 87 || key === 38) && (this.moveY === 0)){
+              this.moveY = -10;
+              this.moveX = 0;
+            } 
+            if((key === 83 || key === 40) && (this.moveY === 0)){
+              this.moveY = 10;
+              this.moveX = 0;
+            }
+            else if((key === 65 || key === 37) && (this.moveX === 0)){
+              this.moveY = 0;
+              this.moveX = -10;
+            }
+            else if((key === 68 || key === 39) && (this.moveX === 0)){
+              this.moveY = 0;
+              this.moveX = 10;
+            }
+            this.button = 0;
+
+            console.log("X,Y:", this.moveX, this.moveY)
+        }
+        
         
     },
-    created() {
-        window.addEventListener("keydown", event => {
-            event.preventDefault()
-            console.log("87")
+    mounted() {
+        const game = document.getElementById('game');
+        const ctx = game.getContext("2d");
+        const circle = document.getElementsByClassName("circle");
+        const up = document.getElementById("up");
+        const down = document.getElementById("down");
+        const left = document.getElementById("left");
+        const right = document.getElementById("right");
+        
+        this.drawMap(ctx)
+        this.drawFood(ctx)
+        this.drawSnake(ctx)
+        
+        up.addEventListener('click', (e)=>{   
+            this.button = 87;  
+            this.changeDirection(e)
         })
+        down.addEventListener('click', (e)=>{ 
+            this.button = 83;  
+            this.changeDirection(e)
+        })
+        left.addEventListener('click', (e)=>{ 
+            this.button = 65;  
+            this.changeDirection(e)
+        })
+        right.addEventListener('click', (e)=>{ 
+            this.button = 68;  
+            this.changeDirection(e)
+        })
+        circle[0].addEventListener('click', (e)=>{ 
+            this.gameStatus = "pause"
+        })
+        circle[1].addEventListener('click', (e)=>{ 
+            this.gameStatus = "pause"
+        })
+        // window.addEventListener("keydown", event => {
+        //     event.preventDefault()
+        //     console.log("87")
+        // })
     }
 }
 </script>
