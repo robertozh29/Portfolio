@@ -162,10 +162,10 @@ export default {
         circle[1].addEventListener('click', (e)=>{ 
             this.gameStatus = "pause"
         })
-        // window.addEventListener("keydown", event => {
-        //     event.preventDefault()
-        //     console.log("87")
-        // })
+        window.addEventListener("keydown", event => {
+            event.preventDefault()
+            this.changeDirection(event)
+        })
     }
 }
 </script>
