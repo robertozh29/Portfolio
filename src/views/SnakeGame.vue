@@ -1,9 +1,21 @@
 <template>
-    <div class="snakegame">
+    <div id="snakegame" class="snakegame">
         <div class="game-container">
             <div class="canvas-container">
-                <div class="scoreboard"><p>Score: <span id="score">0</span></p></div>
+                <div class="score"><p>Score: <span id="score">0</span></p></div>
                 <canvas id="game" width="250" height="250"></canvas>
+                <div class="scoreboard" id="scoreboard">
+                  <table>
+                    <tr>
+                      <th>Name</th>
+                      <th>Score</th>
+                    </tr>
+                    <tr>
+                      <td>Alfreds Futterkiste</td>
+                      <td>35</td>
+                    </tr>
+                  </table>
+                </div>
             </div>
             <div class="controls">
                 <div class="arrows">
@@ -17,8 +29,12 @@
                     </div>
                 </div>
                 <div class="circles">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
+                    <div class="circle" @click.prevent="showScoreboard()">
+                      <p>Scores</p>
+                    </div>
+                    <div class="circle">
+                      <p>Pause</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -43,7 +59,6 @@ export default {
     },
     methods:{
         drawMap(ctx){
-          console.log(ctx)
             for (let y = 0; y < 250; y +=10) {  
                 for (let x = 0; x < 250; x +=10) {
                     ctx.fillStyle = 'rgb(135, 161, 82)';
@@ -125,8 +140,6 @@ export default {
               this.moveX = 10;
             }
             this.button = 0;
-
-            console.log("X,Y:", this.moveX, this.moveY)
         },
         endGame(ctx){
             this.snake = [
@@ -154,8 +167,12 @@ export default {
               this.endGame(ctx);
             }else{
               this.main(ctx);
-            }    
+            }
           }, 140);
+        },
+        showScoreboard(){
+          const scoreboard = document.getElementById("scoreboard")
+          scoreboard.style.display == "block" ? scoreboard.style.display = "none" : scoreboard.style.display = "block"
         }
         
         
@@ -195,8 +212,21 @@ export default {
         })
         window.addEventListener("keydown", event => {
             event.preventDefault()
-            this.changeDirection(event)
+            console.log(event.key, event.code)
+            if(event.code == "Space"){
+              this.gameStatus = "pause"
+            }
+            else if(this.gameStatus == "pause"){
+              this.gameStatus = "play"
+              this.changeDirection(event)
+            }
+            else{
+              this.changeDirection(event)
+            }
+            
         })
+
+        
     }
 }
 </script>
@@ -232,11 +262,30 @@ body {
 }
 
 .canvas-container {
+  position: relative;
   padding: 25px 60px;
   background-color: #928e93;
   border-radius: 8px 8px 50px 8px;
 }
-.scoreboard {
+.scoreboard{
+  position: absolute;
+  top: 26px;
+  width: 250px;
+  height: 260px;
+  background-color: #000;
+  display: none;
+}
+.scoreboard table{
+  font-family: 'iconsolata',monospace;
+  width: 100%;
+  padding-top: 10px;
+  font-size: 14px;
+}
+.scoreboard table tr:first-child{
+  line-height:30px;
+}
+
+.score {
   width: 100%;
   height: 12px;
   background-color: #a5ad89;
@@ -309,6 +358,14 @@ body {
 .circle:first-child {
   margin-bottom: 15px;
 }
+
+.circle p {
+  transform: rotate(-90deg) translate(-16px, 0px);
+  font-size: 12px;
+  color: #a77482;
+}
+
+
 
 
 @media screen and (max-width: 430px) {
