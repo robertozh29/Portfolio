@@ -10,9 +10,9 @@
                       <th>Name</th>
                       <th>Score</th>
                     </tr>
-                    <tr>
-                      <td>Alfreds Futterkiste</td>
-                      <td>35</td>
+                    <tr v-for="(user,index) in users_scores" :key="index">
+                      <td>{{user[0]}}</td>
+                      <td>{{user[1]}}</td>
                     </tr>
                   </table>
                 </div>
@@ -54,7 +54,8 @@ export default {
           moveY: 0,
           button: 0,
           gameStatus: "play",
-          score: 0
+          score: 0,
+          users_scores: []
       }  
     },
     methods:{
@@ -173,9 +174,21 @@ export default {
         showScoreboard(){
           const scoreboard = document.getElementById("scoreboard")
           scoreboard.style.display == "block" ? scoreboard.style.display = "none" : scoreboard.style.display = "block"
+        },
+        async get_scores(){
+          try{
+            const response = await fetch('http://127.0.0.1:5000/top_ten_scores')
+            const movies = await response.json();
+            console.log(movies);
+            this.users_scores = movies
+          }catch(error){
+            console.log(error)
+          }
         }
-        
-        
+    },
+    
+    created(){
+      this.get_scores()
     },
     mounted() {
         const game = document.getElementById('game');
@@ -225,6 +238,7 @@ export default {
             }
             
         })
+
 
         
     }
