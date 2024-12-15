@@ -11,8 +11,8 @@
                 </div>
                 <h1>Roberto Zepeda</h1>
                 <h2>Systems Engineer</h2>
-                <p>Experienced in building web applications</p>
-                <a class="boton" @click="openResume">Resume</a>
+                <p>Experienced in building software solutions</p>
+                <!--<a class="boton" @click="openResume">Resume</a>-->
             </header>
             <About
                 :description="about.description"
