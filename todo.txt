@@ -1,7 +1,6 @@
 - Update about me base in my current CV description
-- Remove about me picture
 - keep snake game and delete the other projects
 - Create a linktree page with: LinkedIn, Github, Twitter, Instagram, Goodreads
 - Create backend for snakegame and divide repositorie in backend and frontend
 - Update CV 
-- 
+- Create Header/Home component

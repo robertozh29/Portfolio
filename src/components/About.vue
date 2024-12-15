@@ -9,23 +9,26 @@
             <div class="tec">
                     <ul>
                         <li>Python</li>
-                        <li>Javascript</li>
-                    </ul>
-                    <ul>
-                        <li>SQL</li>
-                        <li>Vue.js</li>
+                        <li>PostgreSQL</li>
+                        <li>Java</li>
                     </ul>
                     <ul>
                         <li>Flask</li>
-                        <li>Google Cloud</li>  
+                        <li>Javascript</li>
+                        <li>Selenium</li>
                     </ul>
                     <ul>
-                        <li>PostgreSQL</li>
-                        <li>Firebase</li>
+                        <li>Django</li>
+                        <li>HTML</li>  
+                        <li>Git</li>
+                    </ul>
+                    <ul>
+                        <li>MySQL</li>
+                        <li>CSS</li>
+                        <li>MongoDB</li>
                     </ul>
             </div>
         </div>   
-        <img src="../assets/yo.jpg" alt="">
     </div>
 </template>
 
@@ -56,7 +59,7 @@ export default {
 }
 
 .about-me{
-    width: 70%;
+    width: 90%;        
 }
 
 .about img{
