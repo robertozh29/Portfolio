@@ -1,0 +1,6 @@
+.line{
+    height: 25vh;
+    width: 0;
+    background-color:rgba(204, 204, 204, 0.5);
+    border: 1px solid rgba(204, 204, 204, 0.5);
+}

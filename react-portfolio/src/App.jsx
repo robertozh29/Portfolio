@@ -4,12 +4,14 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Example from './pages/Example'
 import Home from './pages/Home'
 import Navbar from "./components/Navbar/Navbar";
+import SocialMedia from "./components/SocialMedia/SocialMedia";
 import './App.css'
 
 function App() {
   return (
       <Router>
         <Navbar />
+        <SocialMedia />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<Example title="About"/>} />
