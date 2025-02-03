@@ -1,3 +1,5 @@
+<!-- eslint-disable vue/html-indent -->
+<!-- eslint-disable vue/max-attributes-per-line -->
 <template>
     <nav class="navbar">
         <div class="logo">
