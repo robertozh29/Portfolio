@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-export default function Navbar({ current }){
+import styles from './Navbar.module.css'
+
+export default function Navbar(){
     return (
-        <div className="navbar">
-            { current }
+        <div className={styles.container}>
+            <p>Hola</p>
             <nav>
                 <Link to="/">Home</Link>
                 <Link to="/about">About</Link>

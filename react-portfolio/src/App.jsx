@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 //import viteLogo from '/vite.svg'
 import Example from './pages/Example'
 import Home from './pages/Home'
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import './App.css'
 
 function App() {
