@@ -1,3 +1,43 @@
+.social {
+    width: min-content;
+}
+
+.social ul{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+.social li{
+    margin: 14px;
+    list-style: none;
+}
+
+.social li:last-child{
+    margin-bottom: 0;
+}
+
+.social li a{
+    display: inline-block;
+    position: relative;
+}
+
+.container li:hover{
+    color:#2fceb3;
+}
+
+.logo{
+    width: 25px;
+    height: 25px;
+    color: #cccccc;
+    transition: ease 0.2s;
+}
+
+.logo:hover{
+    color:#2fceb3;
+}
+
 .line{
     height: 25vh;
     width: 0;
