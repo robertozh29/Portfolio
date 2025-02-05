@@ -1,0 +1,23 @@
+.useState{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 20px;
+}
+
+.useState p{
+    text-align: left;
+}
+
+.contador{
+    display: flex;
+    align-items: center;
+    margin: 15px 5px;
+    border: 2px solid #1a1a1a;
+    border-radius: 8px;
+}
+
+.contador p {
+    margin: 0 10px;
+}
+
