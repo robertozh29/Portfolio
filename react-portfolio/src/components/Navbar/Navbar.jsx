@@ -16,6 +16,7 @@ export default function Navbar(){
                     <li>2.0 <Link to="/about">About</Link></li>
                     <li>3.0 <Link to="/projects">Projects</Link></li>
                     <li>4.0 <Link to="/contact">Contact</Link></li>
+                    <li>5.0 <Link to="/articles">Articles</Link></li>
                 </ul>
             </nav>
         </div>
