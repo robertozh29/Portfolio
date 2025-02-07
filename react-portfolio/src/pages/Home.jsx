@@ -4,7 +4,7 @@ import styles from "./pages.module.css"
 
 export default function Home(){
     return (
-        <div className={styles.page}>
+        <div className={`${styles.page} ${styles.home}`}>
             <SocialMedia className={styles.social}/>
             <Lightsaber className={styles.lightsaber}/>
             <div className={styles.content}>
