@@ -8,9 +8,9 @@ import styles from './Navbar.module.css'
 
 export default function Navbar(){
     return (
-        <div className={styles.container}>
+        <div className={styles.navbar}>
             <Logo />
-            <nav className={styles.navbar}>
+            <nav>
                 <ul>
                     <li>1.0 <Link to="/">Home</Link></li>
                     <li>2.0 <Link to="/about">About</Link></li>
