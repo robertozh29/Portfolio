@@ -1,11 +1,12 @@
+import PropTypes from 'prop-types'
 import styles from './SocialMedia.module.css';
 import LinkedinLogo from '../../assets/Linkedin.jsx';
 import InstagramLogo from '../../assets/Instagram.jsx';
 import GitHubLogo from '../../assets/Github.jsx';
 
-export default function SocialMedia(){
+export default function SocialMedia({ className }){
     return (
-        <div className={`${styles.social} social`}>
+        <div className={`${styles.social} ${className}`}>
             <ul>
                 <li>
                     <a href="https://github.com/robertozh29" target="_blank"> 
@@ -29,3 +30,8 @@ export default function SocialMedia(){
         </div>
     )
 }
+
+SocialMedia.propTypes = {
+    className: PropTypes.string
+}
+
